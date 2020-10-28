@@ -3,7 +3,7 @@
 #include<array>
 #include<cmath>
 
-namespace {
+namespace myTFHE{
 
 using namespace std;
 
@@ -43,5 +43,5 @@ struct lweparams{
 };
 
 
-}
+}// myTFHE
 
