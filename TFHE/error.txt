@@ -1,0 +1,267 @@
+hagarikuo@ThinkPadX280:~/seccamp/TFHE$ g++ tlwemain.cpp tlwe.cpp RANDEN/randen.cc
+In file included from tlwemain.cpp:28:0:
+/home/hagarikuo/seccamp/TFHE/INCLUDE/key.hpp:25:8: warning: ‘myTFHE::secretkey’ has a field ‘myTFHE::secretkey::params’ whose type uses the anonymous namespace [-Wsubobject-linkage]
+ struct secretkey{
+        ^~~~~~~~~
+In file included from tlwe.cpp:8:0:
+/home/hagarikuo/seccamp/TFHE/INCLUDE/key.hpp:25:8: warning: ‘myTFHE::secretkey’ has a field ‘myTFHE::secretkey::params’ whose type uses the anonymous namespace [-Wsubobject-linkage]
+ struct secretkey{
+        ^~~~~~~~~
+tlwe.cpp:13:37: error: redefinition of ‘randen::Randen<long unsigned int> myTFHE::engine’
+     static randen::Randen<uint64_t> engine;
+                                     ^~~~~~
+In file included from tlwe.cpp:7:0:
+/home/hagarikuo/seccamp/TFHE/INCLUDE/common.hpp:6:33: note: ‘randen::Randen<long unsigned int> myTFHE::engine’ previously declared here
+ static randen::Randen<uint64_t> engine;
+                                 ^~~~~~
+tlwe.cpp: In function ‘std::vector<std::array<unsigned int, 631> > myTFHE::tlweEnc(const std::vector<unsigned char>&, const myTFHE::secretkey&)’:
+tlwe.cpp:20:19: error: ‘tlweEnclvl0’ was not declared in this scope
+             c[i]= tlweEnclvl0(m[i]? DEF_myu : -DEF_myu,DEF_alpha,sk.key.lvl0);
+                   ^~~~~~~~~~~
+tlwe.cpp:20:19: note: suggested alternative: ‘tlweEnc’
+             c[i]= tlweEnclvl0(m[i]? DEF_myu : -DEF_myu,DEF_alpha,sk.key.lvl0);
+                   ^~~~~~~~~~~
+                   tlweEnc
+tlwe.cpp: In function ‘{anonymous}::TLWElvl0 myTFHE::tlweEnclvl0(uint32_t, double, const lwekeylvl0&)’:
+tlwe.cpp:29:16: error: ‘tlweSymEnc’ was not declared in this scope
+         return tlweSymEnc<uint32_t,DEF_n>(m,alpha,key);
+                ^~~~~~~~~~
+tlwe.cpp:29:16: note: suggested alternative: ‘tlweEnc’
+         return tlweSymEnc<uint32_t,DEF_n>(m,alpha,key);
+                ^~~~~~~~~~
+                tlweEnc
+tlwe.cpp:29:35: error: expected primary-expression before ‘,’ token
+         return tlweSymEnc<uint32_t,DEF_n>(m,alpha,key);
+                                   ^
+tlwe.cpp:29:41: error: no match for ‘operator>’ (operand types are ‘const uint32_t {aka const unsigned int}’ and ‘const lwekeylvl0 {aka const std::array<unsigned int, 630>}’)
+         return tlweSymEnc<uint32_t,DEF_n>(m,alpha,key);
+                                    ~~~~~^~~~~~~~~~~~~~
+In file included from /usr/include/c++/7/utility:70:0,
+                 from /usr/include/c++/7/algorithm:60,
+                 from /home/hagarikuo/seccamp/TFHE/RANDEN/randen.h:24,
+                 from tlwe.cpp:1:
+/usr/include/c++/7/bits/stl_pair.h:467:5: note: candidate: template<class _T1, class _T2> constexpr bool std::operator>(const std::pair<_T1, _T2>&, const std::pair<_T1, _T2>&)
+     operator>(const pair<_T1, _T2>& __x, const pair<_T1, _T2>& __y)
+     ^~~~~~~~
+/usr/include/c++/7/bits/stl_pair.h:467:5: note:   template argument deduction/substitution failed:
+tlwe.cpp:29:54: note:   mismatched types ‘const std::pair<_T1, _T2>’ and ‘const uint32_t {aka const unsigned int}’
+         return tlweSymEnc<uint32_t,DEF_n>(m,alpha,key);
+                                                      ^
+In file included from /usr/include/c++/7/bits/stl_algobase.h:67:0,
+                 from /usr/include/c++/7/algorithm:61,
+                 from /home/hagarikuo/seccamp/TFHE/RANDEN/randen.h:24,
+                 from tlwe.cpp:1:
+/usr/include/c++/7/bits/stl_iterator.h:320:5: note: candidate: template<class _Iterator> bool std::operator>(const std::reverse_iterator<_Iterator>&, const std::reverse_iterator<_Iterator>&)
+     operator>(const reverse_iterator<_Iterator>& __x,
+     ^~~~~~~~
+/usr/include/c++/7/bits/stl_iterator.h:320:5: note:   template argument deduction/substitution failed:
+tlwe.cpp:29:54: note:   mismatched types ‘const std::reverse_iterator<_Iterator>’ and ‘const uint32_t {aka const unsigned int}’
+         return tlweSymEnc<uint32_t,DEF_n>(m,alpha,key);
+                                                      ^
+In file included from /usr/include/c++/7/bits/stl_algobase.h:67:0,
+                 from /usr/include/c++/7/algorithm:61,
+                 from /home/hagarikuo/seccamp/TFHE/RANDEN/randen.h:24,
+                 from tlwe.cpp:1:
+/usr/include/c++/7/bits/stl_iterator.h:358:5: note: candidate: template<class _IteratorL, class _IteratorR> bool std::operator>(const std::reverse_iterator<_Iterator>&, const std::reverse_iterator<_IteratorR>&)
+     operator>(const reverse_iterator<_IteratorL>& __x,
+     ^~~~~~~~
+/usr/include/c++/7/bits/stl_iterator.h:358:5: note:   template argument deduction/substitution failed:
+tlwe.cpp:29:54: note:   mismatched types ‘const std::reverse_iterator<_Iterator>’ and ‘const uint32_t {aka const unsigned int}’
+         return tlweSymEnc<uint32_t,DEF_n>(m,alpha,key);
+                                                      ^
+In file included from /usr/include/c++/7/bits/stl_algobase.h:67:0,
+                 from /usr/include/c++/7/algorithm:61,
+                 from /home/hagarikuo/seccamp/TFHE/RANDEN/randen.h:24,
+                 from tlwe.cpp:1:
+/usr/include/c++/7/bits/stl_iterator.h:1169:5: note: candidate: template<class _IteratorL, class _IteratorR> bool std::operator>(const std::move_iterator<_IteratorL>&, const std::move_iterator<_IteratorR>&)
+     operator>(const move_iterator<_IteratorL>& __x,
+     ^~~~~~~~
+/usr/include/c++/7/bits/stl_iterator.h:1169:5: note:   template argument deduction/substitution failed:
+tlwe.cpp:29:54: note:   mismatched types ‘const std::move_iterator<_IteratorL>’ and ‘const uint32_t {aka const unsigned int}’
+         return tlweSymEnc<uint32_t,DEF_n>(m,alpha,key);
+                                                      ^
+In file included from /usr/include/c++/7/bits/stl_algobase.h:67:0,
+                 from /usr/include/c++/7/algorithm:61,
+                 from /home/hagarikuo/seccamp/TFHE/RANDEN/randen.h:24,
+                 from tlwe.cpp:1:
+/usr/include/c++/7/bits/stl_iterator.h:1175:5: note: candidate: template<class _Iterator> bool std::operator>(const std::move_iterator<_IteratorL>&, const std::move_iterator<_IteratorL>&)
+     operator>(const move_iterator<_Iterator>& __x,
+     ^~~~~~~~
+/usr/include/c++/7/bits/stl_iterator.h:1175:5: note:   template argument deduction/substitution failed:
+tlwe.cpp:29:54: note:   mismatched types ‘const std::move_iterator<_IteratorL>’ and ‘const uint32_t {aka const unsigned int}’
+         return tlweSymEnc<uint32_t,DEF_n>(m,alpha,key);
+                                                      ^
+In file included from /usr/include/c++/7/string:52:0,
+                 from /usr/include/c++/7/bits/locale_classes.h:40,
+                 from /usr/include/c++/7/bits/ios_base.h:41,
+                 from /usr/include/c++/7/ios:42,
+                 from /home/hagarikuo/seccamp/TFHE/RANDEN/randen.h:25,
+                 from tlwe.cpp:1:
+/usr/include/c++/7/bits/basic_string.h:6132:5: note: candidate: template<class _CharT, class _Traits, class _Alloc> bool std::operator>(const std::__cxx11::basic_string<_CharT, _Traits, _Alloc>&, const std::__cxx11::basic_string<_CharT, _Traits, _Alloc>&)
+     operator>(const basic_string<_CharT, _Traits, _Alloc>& __lhs,
+     ^~~~~~~~
+/usr/include/c++/7/bits/basic_string.h:6132:5: note:   template argument deduction/substitution failed:
+tlwe.cpp:29:54: note:   mismatched types ‘const std::__cxx11::basic_string<_CharT, _Traits, _Alloc>’ and ‘const uint32_t {aka const unsigned int}’
+         return tlweSymEnc<uint32_t,DEF_n>(m,alpha,key);
+                                                      ^
+In file included from /usr/include/c++/7/string:52:0,
+                 from /usr/include/c++/7/bits/locale_classes.h:40,
+                 from /usr/include/c++/7/bits/ios_base.h:41,
+                 from /usr/include/c++/7/ios:42,
+                 from /home/hagarikuo/seccamp/TFHE/RANDEN/randen.h:25,
+                 from tlwe.cpp:1:
+/usr/include/c++/7/bits/basic_string.h:6145:5: note: candidate: template<class _CharT, class _Traits, class _Alloc> bool std::operator>(const std::__cxx11::basic_string<_CharT, _Traits, _Alloc>&, const _CharT*)
+     operator>(const basic_string<_CharT, _Traits, _Alloc>& __lhs,
+     ^~~~~~~~
+/usr/include/c++/7/bits/basic_string.h:6145:5: note:   template argument deduction/substitution failed:
+tlwe.cpp:29:54: note:   mismatched types ‘const std::__cxx11::basic_string<_CharT, _Traits, _Alloc>’ and ‘const uint32_t {aka const unsigned int}’
+         return tlweSymEnc<uint32_t,DEF_n>(m,alpha,key);
+                                                      ^
+In file included from /usr/include/c++/7/string:52:0,
+                 from /usr/include/c++/7/bits/locale_classes.h:40,
+                 from /usr/include/c++/7/bits/ios_base.h:41,
+                 from /usr/include/c++/7/ios:42,
+                 from /home/hagarikuo/seccamp/TFHE/RANDEN/randen.h:25,
+                 from tlwe.cpp:1:
+/usr/include/c++/7/bits/basic_string.h:6157:5: note: candidate: template<class _CharT, class _Traits, class _Alloc> bool std::operator>(const _CharT*, const std::__cxx11::basic_string<_CharT, _Traits, _Alloc>&)
+     operator>(const _CharT* __lhs,
+     ^~~~~~~~
+/usr/include/c++/7/bits/basic_string.h:6157:5: note:   template argument deduction/substitution failed:
+tlwe.cpp:29:54: note:   mismatched types ‘const _CharT*’ and ‘unsigned int’
+         return tlweSymEnc<uint32_t,DEF_n>(m,alpha,key);
+                                                      ^
+In file included from tlwe.cpp:3:0:
+/usr/include/c++/7/array:270:5: note: candidate: template<class _Tp, long unsigned int _Nm> bool std::operator>(const std::array<_Tp, _Nm>&, const std::array<_Tp, _Nm>&)
+     operator>(const array<_Tp, _Nm>& __one, const array<_Tp, _Nm>& __two)
+     ^~~~~~~~
+/usr/include/c++/7/array:270:5: note:   template argument deduction/substitution failed:
+tlwe.cpp:29:54: note:   mismatched types ‘const std::array<_Tp, _Nm>’ and ‘const uint32_t {aka const unsigned int}’
+         return tlweSymEnc<uint32_t,DEF_n>(m,alpha,key);
+                                                      ^
+In file included from /usr/include/c++/7/vector:64:0,
+                 from /usr/include/c++/7/bits/random.h:34,
+                 from /usr/include/c++/7/random:49,
+                 from tlwe.cpp:4:
+/usr/include/c++/7/bits/stl_vector.h:1631:5: note: candidate: template<class _Tp, class _Alloc> bool std::operator>(const std::vector<_Tp, _Alloc>&, const std::vector<_Tp, _Alloc>&)
+     operator>(const vector<_Tp, _Alloc>& __x, const vector<_Tp, _Alloc>& __y)
+     ^~~~~~~~
+/usr/include/c++/7/bits/stl_vector.h:1631:5: note:   template argument deduction/substitution failed:
+tlwe.cpp:29:54: note:   mismatched types ‘const std::vector<_Tp, _Alloc>’ and ‘const uint32_t {aka const unsigned int}’
+         return tlweSymEnc<uint32_t,DEF_n>(m,alpha,key);
+                                                      ^
+tlwe.cpp: In function ‘std::array<T, (n + 1)> myTFHE::tlweSymEnc(T, double, const std::array<unsigned int, n>&)’:
+tlwe.cpp:43:28: error: expected ‘;’ before ‘)’ token
+         for(int i=0;i<n,++i){
+                            ^
+In file included from RANDEN/randen.cc:19:0:
+RANDEN/vector128.h:38:2: error: #error "Port"
+ #error "Port"
+  ^~~~~
+RANDEN/vector128.h:86:2: error: #error "Port"
+ #error "Port"
+  ^~~~~
+RANDEN/vector128.h:127:2: error: #error "Port"
+ #error "Port"
+  ^~~~~
+RANDEN/vector128.h:144:2: error: #error "Port"
+ #error "Port"
+  ^~~~~
+RANDEN/vector128.h:161:2: error: #error "Port"
+ #error "Port"
+  ^~~~~
+RANDEN/vector128.h:89:31: error: ‘V’ was not declared in this scope
+ constexpr int kLanes = sizeof(V) / sizeof(uint64_t);
+                               ^
+RANDEN/vector128.h:113:22: error: ‘V’ does not name a type
+ static RANDEN_INLINE V Load(const uint64_t* RANDEN_RESTRICT lanes,
+                      ^
+RANDEN/vector128.h:131:39: error: ‘V’ does not name a type
+ static RANDEN_INLINE void Store(const V v, uint64_t* RANDEN_RESTRICT lanes,
+                                       ^
+RANDEN/vector128.h:150:22: error: ‘V’ does not name a type
+ static RANDEN_INLINE V AES(const V state, const V round_key) {
+                      ^
+RANDEN/randen.cc: In function ‘const uint64_t* __restrict__ randen::{anonymous}::Keys()’:
+RANDEN/randen.cc:195:17: error: ‘pi_digits’ was not declared in this scope
+   static_assert(pi_digits[kKeys * kLanes - 1] != 0, "Too few initializers");
+                 ^~~~~~~~~
+RANDEN/randen.cc:195:17: note: suggested alternative: ‘isdigit’
+   static_assert(pi_digits[kKeys * kLanes - 1] != 0, "Too few initializers");
+                 ^~~~~~~~~
+                 isdigit
+RANDEN/randen.cc: In function ‘void randen::{anonymous}::BlockShuffle(uint64_t*)’:
+RANDEN/randen.cc:203:10: error: ‘source’ was not declared in this scope
+   memcpy(source, state, sizeof(source));
+          ^~~~~~
+RANDEN/randen.cc:203:10: note: suggested alternative: ‘double’
+   memcpy(source, state, sizeof(source));
+          ^~~~~~
+          double
+RANDEN/randen.cc:208:11: error: ‘V’ does not name a type
+     const V v = Load(source, shuffle[branch]);
+           ^
+RANDEN/randen.cc:209:11: error: ‘v’ was not declared in this scope
+     Store(v, state, branch);
+           ^
+RANDEN/randen.cc: In function ‘void randen::{anonymous}::Permute(uint64_t*)’:
+RANDEN/randen.cc:227:13: error: ‘V’ does not name a type
+       const V even = Load(state, branch);
+             ^
+RANDEN/randen.cc:228:13: error: ‘V’ does not name a type
+       const V odd = Load(state, branch + 1);
+             ^
+RANDEN/randen.cc:234:13: error: ‘V’ does not name a type
+       const V f1 = AES(even, Load(keys, 0));
+             ^
+RANDEN/randen.cc:236:13: error: ‘V’ does not name a type
+       const V f2 = AES(f1, odd);
+             ^
+RANDEN/randen.cc:237:13: error: ‘f2’ was not declared in this scope
+       Store(f2, state, branch + 1);
+             ^~
+RANDEN/randen.cc: In static member function ‘static void randen::Internal::Absorb(const void*, void*)’:
+RANDEN/randen.cc:261:59: error: ‘V’ was not declared in this scope
+   constexpr int kCapacityBlocks = kCapacityBytes / sizeof(V);
+                                                           ^
+RANDEN/randen.cc:264:7: error: expected ‘;’ before ‘block’
+     V block = Load(state, i);
+       ^~~~~
+RANDEN/randen.cc:265:5: error: ‘block’ was not declared in this scope
+     block ^= Load(seed, i - kCapacityBlocks);
+     ^~~~~
+RANDEN/randen.cc:265:5: note: suggested alternative: ‘clock’
+     block ^= Load(seed, i - kCapacityBlocks);
+     ^~~~~
+     clock
+RANDEN/randen.cc:265:14: error: ‘Load’ was not declared in this scope
+     block ^= Load(seed, i - kCapacityBlocks);
+              ^~~~
+RANDEN/randen.cc:265:14: note: suggested alternative: ‘void’
+     block ^= Load(seed, i - kCapacityBlocks);
+              ^~~~
+              void
+RANDEN/randen.cc: In static member function ‘static void randen::Internal::Generate(void*)’:
+RANDEN/randen.cc:273:42: error: ‘V’ was not declared in this scope
+   static_assert(kCapacityBytes == sizeof(V), "Capacity mismatch");
+                                          ^
+RANDEN/randen.cc:274:9: error: ‘V’ does not name a type
+   const V prev_inner = Load(state, 0);
+         ^
+RANDEN/randen.cc:283:5: error: expected ‘;’ before ‘inner’
+   V inner = Load(state, 0);
+     ^~~~~
+RANDEN/randen.cc:284:3: error: ‘inner’ was not declared in this scope
+   inner ^= prev_inner;
+   ^~~~~
+RANDEN/randen.cc:284:3: note: suggested alternative: ‘index’
+   inner ^= prev_inner;
+   ^~~~~
+   index
+RANDEN/randen.cc:284:12: error: ‘prev_inner’ was not declared in this scope
+   inner ^= prev_inner;
+            ^~~~~~~~~~
+RANDEN/randen.cc:284:12: note: suggested alternative: ‘register’
+   inner ^= prev_inner;
+            ^~~~~~~~~~
+            register
+hagarikuo@ThinkPadX280:~/seccamp/TFHE$                                                        

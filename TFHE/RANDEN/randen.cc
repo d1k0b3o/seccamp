@@ -1,34 +1,3 @@
-Skip to content
-Search or jump to…
-
-Pull requests
-Issues
-Marketplace
-Explore
- 
-@dikosec 
-google
-/
-randen
-16
-31025
-Code
-Issues
-2
-Pull requests
-Actions
-Projects
-Wiki
-Security
-Insights
-randen/randen.cc
-@jan-wassenberg
-jan-wassenberg Add OS,Philox; benchmark reports MAD
-Latest commit 566921c on 5 Jun 2018
- History
- 1 contributor
-288 lines (262 sloc)  14.1 KB
-  
 // Copyright 2017 Google Inc. All Rights Reserved.
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
@@ -47,7 +16,7 @@ Latest commit 566921c on 5 Jun 2018
 
 #include <string.h>     // memcpy
 
-#include "/home/hagarikuo/seccamp/TFHE/RANDEN/vector128.h"
+#include "vector128.h"
 
 namespace randen {
 namespace {
@@ -317,15 +286,3 @@ void Internal::Generate(void* state_void) {
 }
 
 }  // namespace randen
-© 2020 GitHub, Inc.
-Terms
-Privacy
-Security
-Status
-Help
-Contact GitHub
-Pricing
-API
-Training
-Blog
-About
