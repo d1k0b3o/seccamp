@@ -1,5 +1,5 @@
 #pragma once
-#include</home/hagarikuo/seccamp/TFHE/INCLUDE/params.hpp>
+#include</home/hagarikuo/seccamp/TFHE/include/params.hpp>
 #include<array>
 #include<vector>
 #include<random>

@@ -23,10 +23,10 @@
 #include<random>
 #include<vector>
 #include</home/hagarikuo/seccamp/TFHE/RANDEN/randen.h>
-#include</home/hagarikuo/seccamp/TFHE/INCLUDE/params.hpp>
-#include</home/hagarikuo/seccamp/TFHE/INCLUDE/common.hpp>
-#include</home/hagarikuo/seccamp/TFHE/INCLUDE/key.hpp>
-#include</home/hagarikuo/seccamp/TFHE/INCLUDE/tlwe.hpp>
+#include</home/hagarikuo/seccamp/TFHE/include/params.hpp>
+#include</home/hagarikuo/seccamp/TFHE/include/common.hpp>
+#include</home/hagarikuo/seccamp/TFHE/include/key.hpp>
+#include</home/hagarikuo/seccamp/TFHE/include/tlwe.hpp>
 
 using namespace myTFHE;
 using namespace std;

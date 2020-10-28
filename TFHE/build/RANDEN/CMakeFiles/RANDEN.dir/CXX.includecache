@@ -1,0 +1,46 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/hagarikuo/seccamp/TFHE/RANDEN/randen.cc
+randen.h
+/home/hagarikuo/seccamp/TFHE/RANDEN/randen.h
+string.h
+-
+vector128.h
+/home/hagarikuo/seccamp/TFHE/RANDEN/vector128.h
+
+/home/hagarikuo/seccamp/TFHE/RANDEN/randen.h
+stdint.h
+-
+string.h
+-
+algorithm
+-
+ios
+-
+istream
+-
+iterator
+-
+limits
+-
+ostream
+-
+type_traits
+-
+
+/home/hagarikuo/seccamp/TFHE/RANDEN/vector128.h
+stdint.h
+-
+wmmintrin.h
+-
+altivec.h
+-
+arm_neon.h
+-
+

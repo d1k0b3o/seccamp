@@ -1,0 +1,2 @@
+/usr/bin/ar qc libTFHE.a  CMakeFiles/TFHE.dir/tlwe.cpp.o
+/usr/bin/ranlib libTFHE.a

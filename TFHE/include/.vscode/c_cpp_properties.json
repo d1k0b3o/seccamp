@@ -1,0 +1,24 @@
+{
+    "configurations": [
+        {
+            "name": "Linux",
+            "includePath": [
+                "${workspaceFolder}/**",
+                "/home/hagarikuo/seccamp/TFHE/RANDEN",
+                "/home/hagarikuo/seccamp/TFHE/include"
+            ],
+            "defines": [],
+            "compilerPath": "/usr/bin/gcc",
+            "cStandard": "gnu11",
+            "cppStandard": "gnu++14",
+            "intelliSenseMode": "gcc-x64",
+            "browse": {
+                "path": [
+                    "/home/hagarikuo/seccamp/TFHE/RANDEN",
+                    "/home/hagarikuo/seccamp/TFHE/include"
+                ]
+            }
+        }
+    ],
+    "version": 4
+}
