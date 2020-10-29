@@ -1,9 +1,10 @@
 #pragma once
-#include</home/hagarikuo/seccamp/TFHE/include/params.hpp>
+
 #include<array>
 #include<vector>
 #include<random>
-#include</home/hagarikuo/seccamp/TFHE/RANDEN/randen.h>
+#include<../include/params.hpp>
+#include<../RANDEN/randen.h>
 
 namespace myTFHE{
 using namespace std;

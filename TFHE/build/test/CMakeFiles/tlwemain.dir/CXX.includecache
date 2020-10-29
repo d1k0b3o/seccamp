@@ -6,7 +6,7 @@
 
 #IncludeRegexTransform: 
 
-/home/hagarikuo/seccamp/TFHE/RANDEN/randen.h
+../RANDEN/randen.h
 stdint.h
 -
 string.h
@@ -26,25 +26,25 @@ ostream
 type_traits
 -
 
-/home/hagarikuo/seccamp/TFHE/include/common.hpp
+../include/common.hpp
 random
 -
-/home/hagarikuo/seccamp/TFHE/RANDEN/randen.h
+../RANDEN/randen.h
 -
 
-/home/hagarikuo/seccamp/TFHE/include/key.hpp
-/home/hagarikuo/seccamp/TFHE/include/params.hpp
--
+../include/key.hpp
 array
 -
 vector
 -
 random
 -
-/home/hagarikuo/seccamp/TFHE/RANDEN/randen.h
+../include/params.hpp
+-
+../RANDEN/randen.h
 -
 
-/home/hagarikuo/seccamp/TFHE/include/params.hpp
+../include/params.hpp
 cstdint
 -
 array
@@ -52,18 +52,26 @@ array
 cmath
 -
 
-/home/hagarikuo/seccamp/TFHE/include/tlwe.hpp
+../include/tfhe++.hpp
+../include/tlwe.hpp
+-
+../include/params.hpp
+-
+../include/key.hpp
+-
+
+../include/tlwe.hpp
 array
 -
 random
 -
 vector
 -
-/home/hagarikuo/seccamp/TFHE/include/params.hpp
+../include/params.hpp
 -
-/home/hagarikuo/seccamp/TFHE/include/common.hpp
+../include/common.hpp
 -
-/home/hagarikuo/seccamp/TFHE/include/key.hpp
+../include/key.hpp
 -
 
 /home/hagarikuo/seccamp/TFHE/test/tlwemain.cpp
@@ -75,14 +83,10 @@ random
 -
 vector
 -
-/home/hagarikuo/seccamp/TFHE/RANDEN/randen.h
+../RANDEN/randen.h
 -
-/home/hagarikuo/seccamp/TFHE/include/params.hpp
+../include/common.hpp
 -
-/home/hagarikuo/seccamp/TFHE/include/common.hpp
--
-/home/hagarikuo/seccamp/TFHE/include/key.hpp
--
-/home/hagarikuo/seccamp/TFHE/include/tlwe.hpp
+../include/tfhe++.hpp
 -
 

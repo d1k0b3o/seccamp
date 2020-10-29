@@ -13,4 +13,4 @@ target_include_directories(TFHE
     ${PROJECT_SOURCE_DIR}/RANDEN
 )
 
-target_link_libraries(TFHE INTERFACE spqlios RANDEN)
+target_link_libraries(TFHE INTERFACE RANDEN)

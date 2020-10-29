@@ -1,1 +1,1 @@
-/usr/bin/c++  -march=native   CMakeFiles/tlwemain.dir/tlwemain.cpp.o  -o tlwemain ../src/libTFHE.a -lspqlios ../RANDEN/libRANDEN.a 
+/usr/bin/c++  -march=native -std=c++17 -O3   CMakeFiles/tlwemain.dir/tlwemain.cpp.o  -o tlwemain ../src/libTFHE.a ../RANDEN/libRANDEN.a 

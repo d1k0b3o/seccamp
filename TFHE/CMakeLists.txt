@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 3.10)
 project(TFHE CXX)
-set(CMAKE_CXX_FLAGS "-march=native")
+set(CMAKE_CXX_FLAGS "-march=native -std=c++17 -O3")
 
 add_subdirectory(src)
 add_subdirectory(RANDEN)
@@ -12,5 +12,6 @@ if(USE_80BIT_SECURITY)
 endif()
 
 add_subdirectory(test)
+
 
 

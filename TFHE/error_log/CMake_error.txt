@@ -1,0 +1,20 @@
+hagarikuo@ThinkPadX280:~/seccamp/TFHE/build$ make
+Scanning dependencies of target TFHE
+[ 16%] Building CXX object src/CMakeFiles/TFHE.dir/tlwe.cpp.o
+[ 33%] Linking CXX static library libTFHE.a
+[ 33%] Built target TFHE
+Scanning dependencies of target RANDEN
+[ 50%] Building CXX object RANDEN/CMakeFiles/RANDEN.dir/randen.cc.o
+[ 66%] Linking CXX static library libRANDEN.a
+[ 66%] Built target RANDEN
+Scanning dependencies of target tlwemain
+[ 83%] Building CXX object test/CMakeFiles/tlwemain.dir/tlwemain.cpp.o
+[100%] Linking CXX executable tlwemain
+/usr/bin/ld: cannot find -lspqlios
+collect2: error: ld returned 1 exit status
+test/CMakeFiles/tlwemain.dir/build.make:96: recipe for target 'test/tlwemain' failed
+make[2]: *** [test/tlwemain] Error 1
+CMakeFiles/Makefile2:196: recipe for target 'test/CMakeFiles/tlwemain.dir/all' failed
+make[1]: *** [test/CMakeFiles/tlwemain.dir/all] Error 2
+Makefile:83: recipe for target 'all' failed
+make: *** [all] Error 2

@@ -22,11 +22,10 @@
 #include<array>
 #include<random>
 #include<vector>
-#include</home/hagarikuo/seccamp/TFHE/RANDEN/randen.h>
-#include</home/hagarikuo/seccamp/TFHE/include/params.hpp>
-#include</home/hagarikuo/seccamp/TFHE/include/common.hpp>
-#include</home/hagarikuo/seccamp/TFHE/include/key.hpp>
-#include</home/hagarikuo/seccamp/TFHE/include/tlwe.hpp>
+#include<../RANDEN/randen.h>
+#include<../include/common.hpp>
+#include<../include/tfhe++.hpp>
+
 
 using namespace myTFHE;
 using namespace std;
@@ -56,13 +55,23 @@ int main(){
     vector<TLWElvl0> c(DEF_n);
     c=tlweEnc(m,sk);
 
-    cout << "ENCRYPTED!" << endl;
+    // sk で c から m2 を復元
+    vector<uint8_t> m2(DEF_n);
+    m2=tlweDec(c,sk);
 
-    // // sk で c から m2 を復元
-    // vector<uint32_t> m2(DEF_n);
-    // m2=tlwedec(c,sk);
-
-    // // m=m2なら"pass" ?
-    // if(m==m2) cout << "pass" << endl;
+    //m=m2なら"pass" ?
+    bool flag=1;
+    for(int i=0;i<DEF_n;i++) if(m[i]!=m2[i]) flag=0;
+    if(flag) cout << "pass" << endl;
+    else cout << "miss" << endl;
     
+    cout << "m : ";
+    for(int i=0;i<DEF_n;i++){
+        cout << m[i];
+    }cout << endl;
+
+    cout << "m2 : ";
+    for(int i=0;i<DEF_n;i++){
+        cout << m2[i];
+    }cout << endl;
 }

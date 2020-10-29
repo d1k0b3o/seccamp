@@ -191,8 +191,8 @@ test/preinstall:
 # Target rules for target test/CMakeFiles/tlwemain.dir
 
 # All Build rule for target.
-test/CMakeFiles/tlwemain.dir/all: src/CMakeFiles/TFHE.dir/all
 test/CMakeFiles/tlwemain.dir/all: RANDEN/CMakeFiles/RANDEN.dir/all
+test/CMakeFiles/tlwemain.dir/all: src/CMakeFiles/TFHE.dir/all
 	$(MAKE) -f test/CMakeFiles/tlwemain.dir/build.make test/CMakeFiles/tlwemain.dir/depend
 	$(MAKE) -f test/CMakeFiles/tlwemain.dir/build.make test/CMakeFiles/tlwemain.dir/build
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/hagarikuo/seccamp/TFHE/build/CMakeFiles --progress-num=5,6 "Built target tlwemain"

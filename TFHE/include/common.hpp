@@ -1,6 +1,6 @@
 #pragma once
 #include<random>
-#include</home/hagarikuo/seccamp/TFHE/RANDEN/randen.h>
+#include<../RANDEN/randen.h>
 
 namespace myTFHE{
 using namespace std;

@@ -1,12 +1,9 @@
-#include</home/hagarikuo/seccamp/TFHE/RANDEN/randen.h>
+#include<../RANDEN/randen.h>
 
 #include<array>
 #include<random>
 #include<vector>
-#include</home/hagarikuo/seccamp/TFHE/include/params.hpp>
-#include</home/hagarikuo/seccamp/TFHE/include/common.hpp>
-#include</home/hagarikuo/seccamp/TFHE/include/key.hpp>
-
+#include<../include/tfhe++.hpp>
 namespace myTFHE{
     using namespace std;
     // random
@@ -31,6 +28,7 @@ namespace myTFHE{
 
         return res;
     }
+
     // 中継？
     TLWElvl0 tlweEnclvl0(const uint32_t m,const double alpha,const lwekeylvl0 &key){
         return tlweSymEnc<uint32_t,DEF_n>(m,alpha,key);
@@ -47,7 +45,35 @@ namespace myTFHE{
         return c;
 
     }
-    
+
+    template <typename T=uint32_t,uint32_t n=DEF_n>
+    bool tlweSymDec(const array<T,n+1> &c,const array<T,n> &key){
+        T b = c[n];
+        T tmp = 0;
+        for(int i=0;i<n;i++) tmp += c[i]*key[i];
+        // T を符号付きにする uint32_t -> int32_t
+        // bool res = int32_t(b-tmp) > 0;
+        bool res = static_cast<typename make_signed<T>::type>(b-tmp) > 0;
+        return res;
+    }
+
+    // 中継？
+    bool tlweDeclvl0(const TLWElvl0 &c,const lwekeylvl0 &key){
+        return tlweSymDec<uint32_t,DEF_n>(c,key);
+        //return tlweSymDecrypt<uint32_t,DEF_n>(c,key);
+    }
+
+    // tlwe の復号処理の呼び出し
+    vector<uint8_t> tlweDec(const vector<TLWElvl0> c,const secretkey &sk){
+        // 復号してできる平文
+        vector<uint8_t> m2(c.size());
+
+        // 暗号文を1行ずつ処理
+        for(int i=0;i<c.size();i++){
+            m2[i]=tlweDeclvl0(c[i],sk.key.lvl0);
+        }
+        return m2;
+    }
 
 }// myTFHE
 
