@@ -38,3 +38,22 @@
 
 
 */
+
+#include<iostream>
+#include<array>
+#include<vector>
+#include<random>
+#include<../include/tfhe++.hpp>
+#include<../RANDEN/randen.h>
+
+using namespace myTFHE;
+using namespace std;
+
+int main(){
+
+    // random
+    randen::Randen<uint64_t> engine;
+
+    
+
+}
