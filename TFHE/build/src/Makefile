@@ -152,6 +152,33 @@ tlwe.cpp.s:
 	cd /home/hagarikuo/seccamp/TFHE/build && $(MAKE) -f src/CMakeFiles/TFHE.dir/build.make src/CMakeFiles/TFHE.dir/tlwe.cpp.s
 .PHONY : tlwe.cpp.s
 
+trlwe.o: trlwe.cpp.o
+
+.PHONY : trlwe.o
+
+# target to build an object file
+trlwe.cpp.o:
+	cd /home/hagarikuo/seccamp/TFHE/build && $(MAKE) -f src/CMakeFiles/TFHE.dir/build.make src/CMakeFiles/TFHE.dir/trlwe.cpp.o
+.PHONY : trlwe.cpp.o
+
+trlwe.i: trlwe.cpp.i
+
+.PHONY : trlwe.i
+
+# target to preprocess a source file
+trlwe.cpp.i:
+	cd /home/hagarikuo/seccamp/TFHE/build && $(MAKE) -f src/CMakeFiles/TFHE.dir/build.make src/CMakeFiles/TFHE.dir/trlwe.cpp.i
+.PHONY : trlwe.cpp.i
+
+trlwe.s: trlwe.cpp.s
+
+.PHONY : trlwe.s
+
+# target to generate assembly for a file
+trlwe.cpp.s:
+	cd /home/hagarikuo/seccamp/TFHE/build && $(MAKE) -f src/CMakeFiles/TFHE.dir/build.make src/CMakeFiles/TFHE.dir/trlwe.cpp.s
+.PHONY : trlwe.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -164,6 +191,9 @@ help:
 	@echo "... tlwe.o"
 	@echo "... tlwe.i"
 	@echo "... tlwe.s"
+	@echo "... trlwe.o"
+	@echo "... trlwe.i"
+	@echo "... trlwe.s"
 .PHONY : help
 
 

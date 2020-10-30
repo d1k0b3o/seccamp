@@ -7,5 +7,6 @@ test/CMakeFiles/tlwemain.dir/tlwemain.cpp.o: ../include/key.hpp
 test/CMakeFiles/tlwemain.dir/tlwemain.cpp.o: ../include/params.hpp
 test/CMakeFiles/tlwemain.dir/tlwemain.cpp.o: ../include/tfhe++.hpp
 test/CMakeFiles/tlwemain.dir/tlwemain.cpp.o: ../include/tlwe.hpp
+test/CMakeFiles/tlwemain.dir/tlwemain.cpp.o: ../include/trlwe.hpp
 test/CMakeFiles/tlwemain.dir/tlwemain.cpp.o: ../test/tlwemain.cpp
 

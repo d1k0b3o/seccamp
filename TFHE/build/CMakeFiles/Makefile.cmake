@@ -100,4 +100,5 @@ set(CMAKE_DEPEND_INFO_FILES
   "src/CMakeFiles/TFHE.dir/DependInfo.cmake"
   "RANDEN/CMakeFiles/RANDEN.dir/DependInfo.cmake"
   "test/CMakeFiles/tlwemain.dir/DependInfo.cmake"
+  "test/CMakeFiles/trlwemain.dir/DependInfo.cmake"
   )

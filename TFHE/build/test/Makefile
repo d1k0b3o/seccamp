@@ -125,6 +125,21 @@ tlwemain/fast:
 	cd /home/hagarikuo/seccamp/TFHE/build && $(MAKE) -f test/CMakeFiles/tlwemain.dir/build.make test/CMakeFiles/tlwemain.dir/build
 .PHONY : tlwemain/fast
 
+# Convenience name for target.
+test/CMakeFiles/trlwemain.dir/rule:
+	cd /home/hagarikuo/seccamp/TFHE/build && $(MAKE) -f CMakeFiles/Makefile2 test/CMakeFiles/trlwemain.dir/rule
+.PHONY : test/CMakeFiles/trlwemain.dir/rule
+
+# Convenience name for target.
+trlwemain: test/CMakeFiles/trlwemain.dir/rule
+
+.PHONY : trlwemain
+
+# fast build rule for target.
+trlwemain/fast:
+	cd /home/hagarikuo/seccamp/TFHE/build && $(MAKE) -f test/CMakeFiles/trlwemain.dir/build.make test/CMakeFiles/trlwemain.dir/build
+.PHONY : trlwemain/fast
+
 tlwemain.o: tlwemain.cpp.o
 
 .PHONY : tlwemain.o
@@ -152,6 +167,33 @@ tlwemain.cpp.s:
 	cd /home/hagarikuo/seccamp/TFHE/build && $(MAKE) -f test/CMakeFiles/tlwemain.dir/build.make test/CMakeFiles/tlwemain.dir/tlwemain.cpp.s
 .PHONY : tlwemain.cpp.s
 
+trlwemain.o: trlwemain.cpp.o
+
+.PHONY : trlwemain.o
+
+# target to build an object file
+trlwemain.cpp.o:
+	cd /home/hagarikuo/seccamp/TFHE/build && $(MAKE) -f test/CMakeFiles/trlwemain.dir/build.make test/CMakeFiles/trlwemain.dir/trlwemain.cpp.o
+.PHONY : trlwemain.cpp.o
+
+trlwemain.i: trlwemain.cpp.i
+
+.PHONY : trlwemain.i
+
+# target to preprocess a source file
+trlwemain.cpp.i:
+	cd /home/hagarikuo/seccamp/TFHE/build && $(MAKE) -f test/CMakeFiles/trlwemain.dir/build.make test/CMakeFiles/trlwemain.dir/trlwemain.cpp.i
+.PHONY : trlwemain.cpp.i
+
+trlwemain.s: trlwemain.cpp.s
+
+.PHONY : trlwemain.s
+
+# target to generate assembly for a file
+trlwemain.cpp.s:
+	cd /home/hagarikuo/seccamp/TFHE/build && $(MAKE) -f test/CMakeFiles/trlwemain.dir/build.make test/CMakeFiles/trlwemain.dir/trlwemain.cpp.s
+.PHONY : trlwemain.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -161,9 +203,13 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... tlwemain"
 	@echo "... edit_cache"
+	@echo "... trlwemain"
 	@echo "... tlwemain.o"
 	@echo "... tlwemain.i"
 	@echo "... tlwemain.s"
+	@echo "... trlwemain.o"
+	@echo "... trlwemain.i"
+	@echo "... trlwemain.s"
 .PHONY : help
 
 

@@ -1,29 +1,44 @@
 /*
     TLWE実装
-    B={0,1}　"binary"
-    n は Z に含まれる整数, alpha は R に含まれる実数  "securty parameter"
-    n=630,alpha=2^-15
-    UTn は T から n 個の値を独立にとる一様分布
-    DTaplha を平均0標準偏差alphaのモジュラー正規分布とする。
+    "binary"
+    B={0,1}
+    　
+    "securty parameter"
+    n in Z
+    alpha in R  
+    n=630, alpha=2^-15
     
-    a are in Tn
-    e,b are in T 
-    s are in Bn sk
-    m is in T   平文
+    U_T_n は T から n 個の値を独立にとる一様分布
+    D_T,aplha を平均0標準偏差alphaのモジュラー正規分布とする。
+    
+    "cipher text" (a,b) n+1要素
+    a in T_n        a <- U_T_n
+    b in T          b = a dot s + m + e //enc
+    
+    "message"
+    m  in T  
+       in B
+            myu = 1/8
+            myu(2*m - 1) in T 
 
-    a <- UTn
-    e <- DTalpha
-    s <- UBn
+    "error"
+    e in T          e <- D_T,alpha 
+    
+    "secret key"
+    s are in B_n    s <- U_B_n
+
+    "enc"
     b = a dot s + m + e
 
-    (a,b) cipher text (n+1要素)
+    "dec"
+    (1+sgn(b - a dot s))/2
+
 */
 #include<iostream>
 #include<array>
 #include<random>
 #include<vector>
 #include<../RANDEN/randen.h>
-#include<../include/common.hpp>
 #include<../include/tfhe++.hpp>
 
 
@@ -32,13 +47,8 @@ using namespace std;
 
 // mainですることは秘密鍵を生成して、その鍵を利用して、平文を暗号化、できた暗号文の復号
 int main(){
-    using namespace myTFHE;
 
-    //lweparams params;
-
-    // random　一様分布からランダムに取り出すため RANDENじゃない？
-    // random_device seed_gen;
-    // default_random_engine engine(seed_gen());
+    // random　一様分布からランダムに取り出すため 
     randen::Randen<uint64_t> engine;
 
     // bainaryの一様分布　平文の生成のため
@@ -64,14 +74,4 @@ int main(){
     for(int i=0;i<DEF_n;i++) if(m[i]!=m2[i]) flag=0;
     if(flag) cout << "pass" << endl;
     else cout << "miss" << endl;
-    
-    cout << "m : ";
-    for(int i=0;i<DEF_n;i++){
-        cout << m[i];
-    }cout << endl;
-
-    cout << "m2 : ";
-    for(int i=0;i<DEF_n;i++){
-        cout << m2[i];
-    }cout << endl;
 }

@@ -7,5 +7,8 @@ src/CMakeFiles/TFHE.dir/tlwe.cpp.o: ../include/key.hpp
 src/CMakeFiles/TFHE.dir/tlwe.cpp.o: ../include/params.hpp
 src/CMakeFiles/TFHE.dir/tlwe.cpp.o: ../include/tfhe++.hpp
 src/CMakeFiles/TFHE.dir/tlwe.cpp.o: ../include/tlwe.hpp
+src/CMakeFiles/TFHE.dir/tlwe.cpp.o: ../include/trlwe.hpp
 src/CMakeFiles/TFHE.dir/tlwe.cpp.o: ../src/tlwe.cpp
+
+src/CMakeFiles/TFHE.dir/trlwe.cpp.o: ../src/trlwe.cpp
 

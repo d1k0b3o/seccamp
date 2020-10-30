@@ -53,11 +53,15 @@ cmath
 -
 
 ../include/tfhe++.hpp
-../include/tlwe.hpp
--
 ../include/params.hpp
 -
 ../include/key.hpp
+-
+../include/common.hpp
+-
+../include/tlwe.hpp
+-
+../include/trlwe.hpp
 -
 
 ../include/tlwe.hpp
@@ -67,12 +71,10 @@ random
 -
 vector
 -
-../include/params.hpp
+../include/tfhe++.hpp
 -
-../include/common.hpp
--
-../include/key.hpp
--
+
+../include/trlwe.hpp
 
 /home/hagarikuo/seccamp/TFHE/src/tlwe.cpp
 ../RANDEN/randen.h
@@ -85,4 +87,6 @@ vector
 -
 ../include/tfhe++.hpp
 -
+
+/home/hagarikuo/seccamp/TFHE/src/trlwe.cpp
 

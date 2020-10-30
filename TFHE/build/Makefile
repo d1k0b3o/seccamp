@@ -149,6 +149,19 @@ tlwemain/fast:
 	$(MAKE) -f test/CMakeFiles/tlwemain.dir/build.make test/CMakeFiles/tlwemain.dir/build
 .PHONY : tlwemain/fast
 
+#=============================================================================
+# Target rules for targets named trlwemain
+
+# Build rule for target.
+trlwemain: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 trlwemain
+.PHONY : trlwemain
+
+# fast build rule for target.
+trlwemain/fast:
+	$(MAKE) -f test/CMakeFiles/trlwemain.dir/build.make test/CMakeFiles/trlwemain.dir/build
+.PHONY : trlwemain/fast
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -160,6 +173,7 @@ help:
 	@echo "... TFHE"
 	@echo "... RANDEN"
 	@echo "... tlwemain"
+	@echo "... trlwemain"
 .PHONY : help
 
 
