@@ -137,6 +137,19 @@ RANDEN/fast:
 .PHONY : RANDEN/fast
 
 #=============================================================================
+# Target rules for targets named SPQLIOS
+
+# Build rule for target.
+SPQLIOS: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 SPQLIOS
+.PHONY : SPQLIOS
+
+# fast build rule for target.
+SPQLIOS/fast:
+	$(MAKE) -f SPQLIOS/CMakeFiles/SPQLIOS.dir/build.make SPQLIOS/CMakeFiles/SPQLIOS.dir/build
+.PHONY : SPQLIOS/fast
+
+#=============================================================================
 # Target rules for targets named tlwemain
 
 # Build rule for target.
@@ -172,6 +185,7 @@ help:
 	@echo "... edit_cache"
 	@echo "... TFHE"
 	@echo "... RANDEN"
+	@echo "... SPQLIOS"
 	@echo "... tlwemain"
 	@echo "... trlwemain"
 .PHONY : help

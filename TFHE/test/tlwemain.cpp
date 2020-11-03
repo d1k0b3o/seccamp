@@ -25,7 +25,7 @@
     e in T          e <- D_T,alpha 
     
     "secret key"
-    s are in B_n    s <- U_B_n
+    s in B_n    s <- U_B_n
 
     "enc"
     b = a dot s + m + e
@@ -34,7 +34,6 @@
     (1+sgn(b - a dot s))/2
 
 */
-#include<iostream>
 #include<array>
 #include<random>
 #include<vector>

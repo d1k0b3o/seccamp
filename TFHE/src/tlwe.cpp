@@ -1,11 +1,12 @@
-#include<../RANDEN/randen.h>
-
 #include<array>
 #include<random>
 #include<vector>
 #include<../include/tfhe++.hpp>
+#include<../RANDEN/randen.h>
+
 namespace myTFHE{
     using namespace std;
+
     // random
     //static randen::Randen<uint64_t> tengine;
     // 実際の暗号化処理
@@ -14,7 +15,7 @@ namespace myTFHE{
         // Torusからn個の実数をとる これがa
         uniform_int_distribution<T> Torusdist(0,numeric_limits<T>::max());
             
-        // 暗号文の入れ物{a,b}となるように aがn,bが1
+        // 暗号文の入れ物   {a,b}となるように aがn,bが1
         array<T,n+1> res={};
         // m+e
         res[n]=gaussian32(m,alpha);
@@ -42,10 +43,12 @@ namespace myTFHE{
             c[i]= tlweEnclvl0(m[i]? DEF_myu : -DEF_myu,DEF_alpha,sk.key.lvl0);
         }
 
+        // 暗号文を返す
         return c;
 
     }
 
+    // 実際の復号処理
     template <typename T=uint32_t,uint32_t n=DEF_n>
     bool tlweSymDec(const array<T,n+1> &c,const array<T,n> &key){
         T b = c[n];
@@ -72,6 +75,8 @@ namespace myTFHE{
         for(int i=0;i<c.size();i++){
             m2[i]=tlweDeclvl0(c[i],sk.key.lvl0);
         }
+
+        // 復号してできた平文を返す
         return m2;
     }
 

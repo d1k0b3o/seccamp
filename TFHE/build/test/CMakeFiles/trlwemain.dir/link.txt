@@ -1,1 +1,1 @@
-/usr/bin/c++  -march=native -std=c++17 -O3   CMakeFiles/trlwemain.dir/trlwemain.cpp.o  -o trlwemain ../src/libTFHE.a ../RANDEN/libRANDEN.a 
+/usr/bin/c++  -march=native -std=c++17 -O3   CMakeFiles/trlwemain.dir/trlwemain.cpp.o  -o trlwemain ../src/libTFHE.a ../SPQLIOS/libSPQLIOS.a ../RANDEN/libRANDEN.a 

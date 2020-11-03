@@ -53,6 +53,38 @@ int main(){
 
     // random
     randen::Randen<uint64_t> engine;
+    cout << "lvl1" << endl;
+
+    for(int i=0;i < DEF_N;i++){
+        // binary　の一様分布
+        uniform_int_distribution<uint32_t> binary(0,1);
+
+        // 鍵生成
+        lwekey key;
+
+        // 平文生成
+        array<bool,DEF_N> m;
+        for(bool &j : m) j=binary(engine);
+        
+        // 平文を1/8 or -1/8の状態に
+        array<uint32_t,DEF_N> myu;
+        for(int j=0;j<DEF_N;j++) myu[j]=m[j]? DEF_myu : -DEF_myu;
+
+        // 暗号化処理の呼び出し
+        TRLWElvl1 c;
+        c=trlweEnclvl1(myu,DEF_abk,key.lvl1);
+
+        cout << "enc!" << endl;
+        // // 復号処理の呼び出し
+        // array<bool,DEF_N> m2;
+        // m2=trlweDeclvl1(c,key.lvl1);
+
+        // // check
+        // bool flag=1;
+        // for(int i=0;i<DEF_n;i++) if(m[i]!=m2[i]) flag=0;
+        // if(flag) cout << "pass" << endl;
+        // else cout << "miss" << endl;
+    }
 
     
 

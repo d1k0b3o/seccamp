@@ -41,6 +41,7 @@ if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for each subdirectory.
   include("/home/hagarikuo/seccamp/TFHE/build/src/cmake_install.cmake")
   include("/home/hagarikuo/seccamp/TFHE/build/RANDEN/cmake_install.cmake")
+  include("/home/hagarikuo/seccamp/TFHE/build/SPQLIOS/cmake_install.cmake")
   include("/home/hagarikuo/seccamp/TFHE/build/test/cmake_install.cmake")
 
 endif()

@@ -84,7 +84,7 @@ src/preinstall:
 src/CMakeFiles/TFHE.dir/all:
 	$(MAKE) -f src/CMakeFiles/TFHE.dir/build.make src/CMakeFiles/TFHE.dir/depend
 	$(MAKE) -f src/CMakeFiles/TFHE.dir/build.make src/CMakeFiles/TFHE.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/hagarikuo/seccamp/TFHE/build/CMakeFiles --progress-num=3,4,5 "Built target TFHE"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/hagarikuo/seccamp/TFHE/build/CMakeFiles --progress-num=8,9,10 "Built target TFHE"
 .PHONY : src/CMakeFiles/TFHE.dir/all
 
 # Include target in all.
@@ -170,6 +170,61 @@ clean: RANDEN/CMakeFiles/RANDEN.dir/clean
 .PHONY : clean
 
 #=============================================================================
+# Directory level rules for directory SPQLIOS
+
+# Convenience name for "all" pass in the directory.
+SPQLIOS/all: SPQLIOS/CMakeFiles/SPQLIOS.dir/all
+
+.PHONY : SPQLIOS/all
+
+# Convenience name for "clean" pass in the directory.
+SPQLIOS/clean: SPQLIOS/CMakeFiles/SPQLIOS.dir/clean
+
+.PHONY : SPQLIOS/clean
+
+# Convenience name for "preinstall" pass in the directory.
+SPQLIOS/preinstall:
+
+.PHONY : SPQLIOS/preinstall
+
+#=============================================================================
+# Target rules for target SPQLIOS/CMakeFiles/SPQLIOS.dir
+
+# All Build rule for target.
+SPQLIOS/CMakeFiles/SPQLIOS.dir/all:
+	$(MAKE) -f SPQLIOS/CMakeFiles/SPQLIOS.dir/build.make SPQLIOS/CMakeFiles/SPQLIOS.dir/depend
+	$(MAKE) -f SPQLIOS/CMakeFiles/SPQLIOS.dir/build.make SPQLIOS/CMakeFiles/SPQLIOS.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/hagarikuo/seccamp/TFHE/build/CMakeFiles --progress-num=3,4,5,6,7 "Built target SPQLIOS"
+.PHONY : SPQLIOS/CMakeFiles/SPQLIOS.dir/all
+
+# Include target in all.
+all: SPQLIOS/CMakeFiles/SPQLIOS.dir/all
+
+.PHONY : all
+
+# Build rule for subdir invocation for target.
+SPQLIOS/CMakeFiles/SPQLIOS.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/hagarikuo/seccamp/TFHE/build/CMakeFiles 5
+	$(MAKE) -f CMakeFiles/Makefile2 SPQLIOS/CMakeFiles/SPQLIOS.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/hagarikuo/seccamp/TFHE/build/CMakeFiles 0
+.PHONY : SPQLIOS/CMakeFiles/SPQLIOS.dir/rule
+
+# Convenience name for target.
+SPQLIOS: SPQLIOS/CMakeFiles/SPQLIOS.dir/rule
+
+.PHONY : SPQLIOS
+
+# clean rule for target.
+SPQLIOS/CMakeFiles/SPQLIOS.dir/clean:
+	$(MAKE) -f SPQLIOS/CMakeFiles/SPQLIOS.dir/build.make SPQLIOS/CMakeFiles/SPQLIOS.dir/clean
+.PHONY : SPQLIOS/CMakeFiles/SPQLIOS.dir/clean
+
+# clean rule for target.
+clean: SPQLIOS/CMakeFiles/SPQLIOS.dir/clean
+
+.PHONY : clean
+
+#=============================================================================
 # Directory level rules for directory test
 
 # Convenience name for "all" pass in the directory.
@@ -193,11 +248,12 @@ test/preinstall:
 # Target rules for target test/CMakeFiles/tlwemain.dir
 
 # All Build rule for target.
-test/CMakeFiles/tlwemain.dir/all: RANDEN/CMakeFiles/RANDEN.dir/all
 test/CMakeFiles/tlwemain.dir/all: src/CMakeFiles/TFHE.dir/all
+test/CMakeFiles/tlwemain.dir/all: RANDEN/CMakeFiles/RANDEN.dir/all
+test/CMakeFiles/tlwemain.dir/all: SPQLIOS/CMakeFiles/SPQLIOS.dir/all
 	$(MAKE) -f test/CMakeFiles/tlwemain.dir/build.make test/CMakeFiles/tlwemain.dir/depend
 	$(MAKE) -f test/CMakeFiles/tlwemain.dir/build.make test/CMakeFiles/tlwemain.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/hagarikuo/seccamp/TFHE/build/CMakeFiles --progress-num=6,7 "Built target tlwemain"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/hagarikuo/seccamp/TFHE/build/CMakeFiles --progress-num=11,12 "Built target tlwemain"
 .PHONY : test/CMakeFiles/tlwemain.dir/all
 
 # Include target in all.
@@ -207,7 +263,7 @@ all: test/CMakeFiles/tlwemain.dir/all
 
 # Build rule for subdir invocation for target.
 test/CMakeFiles/tlwemain.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/hagarikuo/seccamp/TFHE/build/CMakeFiles 7
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/hagarikuo/seccamp/TFHE/build/CMakeFiles 12
 	$(MAKE) -f CMakeFiles/Makefile2 test/CMakeFiles/tlwemain.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/hagarikuo/seccamp/TFHE/build/CMakeFiles 0
 .PHONY : test/CMakeFiles/tlwemain.dir/rule
@@ -231,11 +287,12 @@ clean: test/CMakeFiles/tlwemain.dir/clean
 # Target rules for target test/CMakeFiles/trlwemain.dir
 
 # All Build rule for target.
-test/CMakeFiles/trlwemain.dir/all: RANDEN/CMakeFiles/RANDEN.dir/all
 test/CMakeFiles/trlwemain.dir/all: src/CMakeFiles/TFHE.dir/all
+test/CMakeFiles/trlwemain.dir/all: RANDEN/CMakeFiles/RANDEN.dir/all
+test/CMakeFiles/trlwemain.dir/all: SPQLIOS/CMakeFiles/SPQLIOS.dir/all
 	$(MAKE) -f test/CMakeFiles/trlwemain.dir/build.make test/CMakeFiles/trlwemain.dir/depend
 	$(MAKE) -f test/CMakeFiles/trlwemain.dir/build.make test/CMakeFiles/trlwemain.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/hagarikuo/seccamp/TFHE/build/CMakeFiles --progress-num=8,9 "Built target trlwemain"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/hagarikuo/seccamp/TFHE/build/CMakeFiles --progress-num=13,14 "Built target trlwemain"
 .PHONY : test/CMakeFiles/trlwemain.dir/all
 
 # Include target in all.
@@ -245,7 +302,7 @@ all: test/CMakeFiles/trlwemain.dir/all
 
 # Build rule for subdir invocation for target.
 test/CMakeFiles/trlwemain.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/hagarikuo/seccamp/TFHE/build/CMakeFiles 7
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/hagarikuo/seccamp/TFHE/build/CMakeFiles 12
 	$(MAKE) -f CMakeFiles/Makefile2 test/CMakeFiles/trlwemain.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/hagarikuo/seccamp/TFHE/build/CMakeFiles 0
 .PHONY : test/CMakeFiles/trlwemain.dir/rule

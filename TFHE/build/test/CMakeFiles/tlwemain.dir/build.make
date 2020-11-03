@@ -91,6 +91,7 @@ tlwemain_EXTERNAL_OBJECTS =
 test/tlwemain: test/CMakeFiles/tlwemain.dir/tlwemain.cpp.o
 test/tlwemain: test/CMakeFiles/tlwemain.dir/build.make
 test/tlwemain: src/libTFHE.a
+test/tlwemain: SPQLIOS/libSPQLIOS.a
 test/tlwemain: RANDEN/libRANDEN.a
 test/tlwemain: test/CMakeFiles/tlwemain.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/hagarikuo/seccamp/TFHE/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX executable tlwemain"

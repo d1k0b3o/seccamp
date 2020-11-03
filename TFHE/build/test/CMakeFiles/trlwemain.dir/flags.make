@@ -6,5 +6,5 @@ CXX_FLAGS = -march=native -std=c++17 -O3
 
 CXX_DEFINES = 
 
-CXX_INCLUDES = -I/home/hagarikuo/seccamp/TFHE/include -I/home/hagarikuo/seccamp/TFHE/RANDEN 
+CXX_INCLUDES = -I/home/hagarikuo/seccamp/TFHE/include -I/home/hagarikuo/seccamp/TFHE/RANDEN -I/home/hagarikuo/seccamp/TFHE/SPQLIOS 
 

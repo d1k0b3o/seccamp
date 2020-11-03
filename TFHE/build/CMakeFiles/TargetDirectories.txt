@@ -6,6 +6,9 @@
 /home/hagarikuo/seccamp/TFHE/build/RANDEN/CMakeFiles/rebuild_cache.dir
 /home/hagarikuo/seccamp/TFHE/build/RANDEN/CMakeFiles/RANDEN.dir
 /home/hagarikuo/seccamp/TFHE/build/RANDEN/CMakeFiles/edit_cache.dir
+/home/hagarikuo/seccamp/TFHE/build/SPQLIOS/CMakeFiles/rebuild_cache.dir
+/home/hagarikuo/seccamp/TFHE/build/SPQLIOS/CMakeFiles/SPQLIOS.dir
+/home/hagarikuo/seccamp/TFHE/build/SPQLIOS/CMakeFiles/edit_cache.dir
 /home/hagarikuo/seccamp/TFHE/build/test/CMakeFiles/rebuild_cache.dir
 /home/hagarikuo/seccamp/TFHE/build/test/CMakeFiles/tlwemain.dir
 /home/hagarikuo/seccamp/TFHE/build/test/CMakeFiles/edit_cache.dir

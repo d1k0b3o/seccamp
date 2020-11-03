@@ -11,6 +11,7 @@ add_library(TFHE
 target_include_directories(TFHE
     PUBLIC ${PROJECT_SOURCE_DIR}/include
     ${PROJECT_SOURCE_DIR}/RANDEN
+    ${PROJECT_SOURCE_DIR}/SPQLIOS
 )
 
-target_link_libraries(TFHE INTERFACE RANDEN)
+target_link_libraries(TFHE INTERFACE SPQLIOS RANDEN)

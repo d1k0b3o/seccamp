@@ -1,11 +1,9 @@
 #pragma once
+
 #include<array>
 #include<random>
 #include<vector>
 #include<../include/tfhe++.hpp>
-// #include<../include/params.hpp>
-// #include<../include/common.hpp>
-// #include<../include/key.hpp>
 
 namespace myTFHE{
     using namespace std;
