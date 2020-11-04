@@ -6,7 +6,7 @@
 
 namespace myTFHE{
     using namespace std;
-    static randen::Randen<uint64_t> engine;
+    //static randen::Randen<uint64_t> engine;
 
     TRLWElvl1 trlweEncZerolvl1(const double abk,const lwekeylvl1 &key){
         TRLWElvl1 c;
@@ -20,7 +20,7 @@ namespace myTFHE{
         PolyMullvl1(c[1],c[0],key);
 
         // error[X] をモジュラーガウス分布から
-        for(uint32_t &i : c[i]) i+=garussian32(0,abk);
+        for(uint32_t &i : c[1]) i+=gaussian32(0,abk);
         
         return c;
     }
@@ -33,6 +33,42 @@ namespace myTFHE{
         // c[1][X] = a[X] dot s[X] + e[x] + myu[X]
         for(int i=0;i<DEF_N;i++) c[1][i]+=myu[i];
         return c;
+    }
+
+
+    array<bool,DEF_N> trlweDeclvl1(const TRLWElvl1 &c,const lwekeylvl1 &key){
+
+        // m2= b[X] - a[X] dot s[X]         
+        array<bool,DEF_N> m2;
+
+        Polynomiallvl1 mulres;
+        // mulres[X] = a[X] dot s[X]
+        PolyMullvl1(mulres,c[0],key);
+
+        // m2= (b[X]-mulres[X]) > 0
+        for(int i=0;i<DEF_N;i++) m2[i]= static_cast<int32_t>(c[1][i]-mulres[i]) > 0;
+
+        return m2;
+    }
+
+    template <typwename T=uint32_t,uint32_t N=DEF_N>
+    void SampleExtractIndex(array<T,N+1> &tlwe,const array<array<T,N>,2> &trlwe, const int index){
+
+        // a'_i
+        // if i<=k      a_k-i
+        // otherwise    -a_N+k-i
+        for(int i=0;i<=index;i++){
+            tlwe[i] = trlwe[0][index - i];
+        }
+        for(int i=0;i<N;i++){
+            tlwe[i] = -trlwe[0][N + index - i];
+        }
+        // b'=b_k
+        tlwe[N]=trlwe[1][index];
+    }
+    
+    void SampleExtractIndexlvl1(TLWElvl1 &tlwe, const TRLWE &trlwe, const int index){
+        SampleExtractIndex<uint32_t,DEF_N>(tlwe,trlwe,index);
     }
 
 

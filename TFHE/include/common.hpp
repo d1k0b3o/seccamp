@@ -22,5 +22,17 @@ inline uint32_t gaussian32(uint32_t m,double alpha){
     return m + DtoT32(error);
 }
 
+template<uint32_t N>
+inline void MulInFD(array<double,N> &res,const array<double,N> &a,const array<double,N> &b){
+
+    for(int i=0;i<N/2;i++){
+        double a_image_b_image = a[i+N/2]*b[i+N/2];
+        double a_real_b_image = a[i]*b[i+N/2];
+
+        res[i]= a[i]*b[i] - a_image_b_image;
+        res[i+N/2]= a[i+N/2]*b[i] + a_real_b_image;
+    }
+}
+
 
 }// myTFHE

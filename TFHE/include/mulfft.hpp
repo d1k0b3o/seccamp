@@ -18,7 +18,7 @@ namespace myTFHE{
         fftplvl1.execute_reverse_torus32(res.data(),a.data());
     }
 
-    inline void PolyMullvl1(const Polynomiallvl1 &res,const Polynomiallvl1 &a,const lwekeylvl1 &b){
+    inline void PolyMullvl1(Polynomiallvl1 &res,const Polynomiallvl1 &a,const lwekeylvl1 &b){
         
         PolynomialInFDlvl1 ffta;    // array<double,DEF_N>
         TwistIFFTlvl1(ffta,a);

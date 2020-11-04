@@ -22,6 +22,9 @@ constexpr uint32_t DEF_Nbit = 10;
 constexpr uint32_t DEF_N = 1 << DEF_Nbit;
 const double DEF_abk = pow(2.0,-25);
 
+constexpr uint64_t DEF_nbarbit = 11;
+constexpr uint64_t DEF_nbar = 1 << DEF_nbarbit;
+
 #endif
 
 // 鍵の呼吸 壱ノ型

@@ -34,6 +34,7 @@
     (1+sgn(b - a dot s))/2
 
 */
+#include<iostream>
 #include<array>
 #include<random>
 #include<vector>
