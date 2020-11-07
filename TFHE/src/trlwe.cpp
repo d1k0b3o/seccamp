@@ -13,7 +13,7 @@ namespace myTFHE{
         // uint32_Tの一様分布 Torusは32bit幅の小数を整数として扱っているからuint32_tでいい
         uniform_int_distribution<uint32_t> Torus32dist(0,UINT32_MAX);
 
-        // c={a[X],b[X]}のc[0]の部分に格納
+        // c={a[X],b[X]}のa[X]の部分にc[0]として格納
         for(uint32_t &i : c[0]) i=Torus32dist(engine);
 
         // c[1]= a[X](c[0]) dot key[X]　の多項式乗算

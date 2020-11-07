@@ -18,7 +18,7 @@
     m[x] in T_N[X]
          in B_N[X]
             myu = 1/8
-            myu(2*m - 1[X]) in T_N[X]
+            myu(2*m - 1[X]) in T_N[X]   myu[i] = m[i] ? myu : -myu
     
     "error"
     e[X] in T_N[X]  e[C] <- D_T_N[X],alphabk
