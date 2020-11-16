@@ -50,6 +50,7 @@ using TRLWEInFDlvl1 = array<PolynomialInFDlvl1,2>;
 
 // Decomposition
 using DecomposedTRLWElvl1 = array<Polynomiallvl1, 2*DEF_l>;
+using DecomposedTRLWEInFDlvl1 = array<PolynomialInFDlvl1,2*DEF_l>;
 
 // TRGSW 暗号文cの型
 using TRGSWlvl1 = array<TRLWElvl1,2*DEF_l>;

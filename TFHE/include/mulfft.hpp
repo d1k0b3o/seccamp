@@ -12,6 +12,7 @@
 namespace myTFHE{
     using namespace std;
 
+    // omomi
     inline void TwistFFTlvl1(Polynomiallvl1 &res,const PolynomialInFDlvl1 &a){
         fftplvl1.execute_direct_torus32(res.data(),a.data());
     }
