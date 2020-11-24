@@ -163,19 +163,6 @@ trlwemain/fast:
 .PHONY : trlwemain/fast
 
 #=============================================================================
-# Target rules for targets named external_product_main
-
-# Build rule for target.
-external_product_main: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 external_product_main
-.PHONY : external_product_main
-
-# fast build rule for target.
-external_product_main/fast:
-	$(MAKE) -f test/CMakeFiles/external_product_main.dir/build.make test/CMakeFiles/external_product_main.dir/build
-.PHONY : external_product_main/fast
-
-#=============================================================================
 # Target rules for targets named tlwemain
 
 # Build rule for target.
@@ -187,6 +174,32 @@ tlwemain: cmake_check_build_system
 tlwemain/fast:
 	$(MAKE) -f test/CMakeFiles/tlwemain.dir/build.make test/CMakeFiles/tlwemain.dir/build
 .PHONY : tlwemain/fast
+
+#=============================================================================
+# Target rules for targets named cmux_main
+
+# Build rule for target.
+cmux_main: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 cmux_main
+.PHONY : cmux_main
+
+# fast build rule for target.
+cmux_main/fast:
+	$(MAKE) -f test/CMakeFiles/cmux_main.dir/build.make test/CMakeFiles/cmux_main.dir/build
+.PHONY : cmux_main/fast
+
+#=============================================================================
+# Target rules for targets named external_product_main
+
+# Build rule for target.
+external_product_main: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 external_product_main
+.PHONY : external_product_main
+
+# fast build rule for target.
+external_product_main/fast:
+	$(MAKE) -f test/CMakeFiles/external_product_main.dir/build.make test/CMakeFiles/external_product_main.dir/build
+.PHONY : external_product_main/fast
 
 # Help Target
 help:
@@ -200,8 +213,9 @@ help:
 	@echo "... RANDEN"
 	@echo "... SPQLIOS"
 	@echo "... trlwemain"
-	@echo "... external_product_main"
 	@echo "... tlwemain"
+	@echo "... cmux_main"
+	@echo "... external_product_main"
 .PHONY : help
 
 

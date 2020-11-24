@@ -74,11 +74,11 @@ int main(){
 
         // 暗号化処理の呼び出し
         TRLWElvl1 c;
-        c=trlweEnclvl1(myu,DEF_abk,key.lvl1);
+        c=trlwe_Enc_lvl1(myu,DEF_abk,key.lvl1);
 
         // 復号処理の呼び出し
         array<bool,DEF_N> m2;
-        m2=trlweDeclvl1(c,key.lvl1);
+        m2=trlwe_Dec_lvl1(c,key.lvl1);
 
         // check
         for(int i=0;i<DEF_n;i++) assert(m[i]==m2[i]);

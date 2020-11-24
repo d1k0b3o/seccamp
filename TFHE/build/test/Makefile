@@ -126,6 +126,36 @@ trlwemain/fast:
 .PHONY : trlwemain/fast
 
 # Convenience name for target.
+test/CMakeFiles/tlwemain.dir/rule:
+	cd /home/hagarikuo/seccamp/TFHE/build && $(MAKE) -f CMakeFiles/Makefile2 test/CMakeFiles/tlwemain.dir/rule
+.PHONY : test/CMakeFiles/tlwemain.dir/rule
+
+# Convenience name for target.
+tlwemain: test/CMakeFiles/tlwemain.dir/rule
+
+.PHONY : tlwemain
+
+# fast build rule for target.
+tlwemain/fast:
+	cd /home/hagarikuo/seccamp/TFHE/build && $(MAKE) -f test/CMakeFiles/tlwemain.dir/build.make test/CMakeFiles/tlwemain.dir/build
+.PHONY : tlwemain/fast
+
+# Convenience name for target.
+test/CMakeFiles/cmux_main.dir/rule:
+	cd /home/hagarikuo/seccamp/TFHE/build && $(MAKE) -f CMakeFiles/Makefile2 test/CMakeFiles/cmux_main.dir/rule
+.PHONY : test/CMakeFiles/cmux_main.dir/rule
+
+# Convenience name for target.
+cmux_main: test/CMakeFiles/cmux_main.dir/rule
+
+.PHONY : cmux_main
+
+# fast build rule for target.
+cmux_main/fast:
+	cd /home/hagarikuo/seccamp/TFHE/build && $(MAKE) -f test/CMakeFiles/cmux_main.dir/build.make test/CMakeFiles/cmux_main.dir/build
+.PHONY : cmux_main/fast
+
+# Convenience name for target.
 test/CMakeFiles/external_product_main.dir/rule:
 	cd /home/hagarikuo/seccamp/TFHE/build && $(MAKE) -f CMakeFiles/Makefile2 test/CMakeFiles/external_product_main.dir/rule
 .PHONY : test/CMakeFiles/external_product_main.dir/rule
@@ -140,20 +170,32 @@ external_product_main/fast:
 	cd /home/hagarikuo/seccamp/TFHE/build && $(MAKE) -f test/CMakeFiles/external_product_main.dir/build.make test/CMakeFiles/external_product_main.dir/build
 .PHONY : external_product_main/fast
 
-# Convenience name for target.
-test/CMakeFiles/tlwemain.dir/rule:
-	cd /home/hagarikuo/seccamp/TFHE/build && $(MAKE) -f CMakeFiles/Makefile2 test/CMakeFiles/tlwemain.dir/rule
-.PHONY : test/CMakeFiles/tlwemain.dir/rule
+cmux_main.o: cmux_main.cpp.o
 
-# Convenience name for target.
-tlwemain: test/CMakeFiles/tlwemain.dir/rule
+.PHONY : cmux_main.o
 
-.PHONY : tlwemain
+# target to build an object file
+cmux_main.cpp.o:
+	cd /home/hagarikuo/seccamp/TFHE/build && $(MAKE) -f test/CMakeFiles/cmux_main.dir/build.make test/CMakeFiles/cmux_main.dir/cmux_main.cpp.o
+.PHONY : cmux_main.cpp.o
 
-# fast build rule for target.
-tlwemain/fast:
-	cd /home/hagarikuo/seccamp/TFHE/build && $(MAKE) -f test/CMakeFiles/tlwemain.dir/build.make test/CMakeFiles/tlwemain.dir/build
-.PHONY : tlwemain/fast
+cmux_main.i: cmux_main.cpp.i
+
+.PHONY : cmux_main.i
+
+# target to preprocess a source file
+cmux_main.cpp.i:
+	cd /home/hagarikuo/seccamp/TFHE/build && $(MAKE) -f test/CMakeFiles/cmux_main.dir/build.make test/CMakeFiles/cmux_main.dir/cmux_main.cpp.i
+.PHONY : cmux_main.cpp.i
+
+cmux_main.s: cmux_main.cpp.s
+
+.PHONY : cmux_main.s
+
+# target to generate assembly for a file
+cmux_main.cpp.s:
+	cd /home/hagarikuo/seccamp/TFHE/build && $(MAKE) -f test/CMakeFiles/cmux_main.dir/build.make test/CMakeFiles/cmux_main.dir/cmux_main.cpp.s
+.PHONY : cmux_main.cpp.s
 
 external_product_main.o: external_product_main.cpp.o
 
@@ -244,9 +286,13 @@ help:
 	@echo "... depend"
 	@echo "... edit_cache"
 	@echo "... trlwemain"
+	@echo "... tlwemain"
+	@echo "... cmux_main"
 	@echo "... rebuild_cache"
 	@echo "... external_product_main"
-	@echo "... tlwemain"
+	@echo "... cmux_main.o"
+	@echo "... cmux_main.i"
+	@echo "... cmux_main.s"
 	@echo "... external_product_main.o"
 	@echo "... external_product_main.i"
 	@echo "... external_product_main.s"

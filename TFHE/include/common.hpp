@@ -8,24 +8,24 @@ namespace myTFHE{
     static randen::Randen<uint64_t> engine;
 
     // 実数からTorusへの変換 (実数の小数部分32bit幅分を取り出す操作)　引数：double 返り値：uint32_t
-    inline uint32_t DtoT32(double d){
+    inline uint32_t D_to_T_32(double d){
 
         return int32_t(int64_t((d-int64_t(d))*(1L << 32)));
     }
 
     // 平均0.0,分散alphaの正規分布からerrorを選び、mに足して返す
-    inline uint32_t gaussian32(uint32_t m,double alpha){
+    inline uint32_t gaussian_32(uint32_t m,double alpha){
         // 平均0.0,分散alphaの正規分布
         normal_distribution<double> gaussian_dist(0.0,alpha);
 
         double error = gaussian_dist(engine);
-        return m + DtoT32(error);
+        return m + D_to_T_32(error);
     }
 
 
     // 負巡回乗算// 引数(res,a,b)
     template<uint32_t N>
-    inline void MulInFD(array<double,N> &res, const array<double,N> &a, const array<double,N> &b){
+    inline void Mul_In_FD(array<double,N> &res, const array<double,N> &a, const array<double,N> &b){
 
         for(int i=0;i<N/2;i++){
             double a_image_b_image = a[i+N/2]*b[i+N/2];
@@ -38,7 +38,7 @@ namespace myTFHE{
 
     //// 引き数(res,a,b)
     template<uint32_t N>
-    inline void FMAInFD(array<double,N> &res, const array<double,N> &a, const array<double,N> &b){
+    inline void FMA_In_FD(array<double,N> &res, const array<double,N> &a, const array<double,N> &b){
         for(int i=0;i<N/2;i++){
             res[i]=a[i+N/2] * b[i+N/2] -res[i];
             res[i]=a[i]*b[i]-res[i];

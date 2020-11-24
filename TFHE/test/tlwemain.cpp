@@ -63,11 +63,11 @@ int main(){
 
     // sk で m を暗号化 暗号文 c はn*(n+1)行列の形
     vector<TLWElvl0> c(DEF_n);
-    c=tlweEnc(m,sk);
+    c=tlwe_Enc(m,sk);
 
     // sk で c から m2 を復元
     vector<uint8_t> m2(DEF_n);
-    m2=tlweDec(c,sk);
+    m2=tlwe_Dec(c,sk);
 
     //m=m2なら"pass" ?
     bool flag=1;

@@ -5,6 +5,7 @@ test/CMakeFiles/external_product_main.dir/external_product_main.cpp.o
  ../RANDEN/randen.h
  ../SPQLIOS/spqlios-fft.h
  ../include/common.hpp
+ ../include/detwfa.hpp
  ../include/key.hpp
  ../include/mulfft.hpp
  ../include/params.hpp

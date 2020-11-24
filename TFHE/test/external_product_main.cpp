@@ -53,24 +53,24 @@ int main(){
         
         // TRLWE で m の暗号化  暗号文 c の生成
         // TRLWElvl1 = array<array<uint32_t,DEF_N>,DEF_N> N x N
-        TRLWElvl1 c = trlweEnclvl1(myu,DEF_abk,key.lvl1);
+        TRLWElvl1 c = trlwe_Enc_lvl1(myu,DEF_abk,key.lvl1);
 
         // cout << "enc m done" << endl;
 
         // TRGSW の平文は 1　暗号文trgsw の生成
         // TRGSWFFTlvl1 = array<array<array<double,DEF_N>,2>,2*DEF_l>  
-        TRGSWFFTlvl1 trgswfft = trgswfftEnclvl1(1,DEF_abk,key.lvl1);
+        TRGSWFFTlvl1 trgswfft = trgsw_fft_Enc_lvl1(1,DEF_abk,key.lvl1);
 
         // cout << "gen trgswfft done" << endl;
 
         // External Product
         // TRGSW x TRLWE -> TRLWE  c に結果(TRLWE)が返る
-        trgswExternalProductlvl1(c,c,trgswfft);
+        trgsw_External_Product_lvl1(c,c,trgswfft);
 
         // cout << "external product done" << endl;
 
         // TRLWE で c の復号 復号したものをm2とする。
-        array<bool,DEF_N> m2 = trlweDeclvl1(c,key.lvl1);
+        array<bool,DEF_N> m2 = trlwe_Dec_lvl1(c,key.lvl1);
 
         // cout << "dec c done" << endl;
         
@@ -111,24 +111,24 @@ int main(){
         
         // TRLWE で m の暗号化  暗号文 c の生成
         // TRLWElvl1 = array<array<uint32_t,DEF_N>,DEF_N> N x N
-        TRLWElvl1 c = trlweEnclvl1(myu,DEF_abk,key.lvl1);
+        TRLWElvl1 c = trlwe_Enc_lvl1(myu,DEF_abk,key.lvl1);
 
         // cout << "enc m done" << endl;
 
         // TRGSW の平文は 1　暗号文trgsw の生成
         // TRGSWFFTlvl1 = array<array<array<double,DEF_N>,2>,2*DEF_l>  
-        TRGSWFFTlvl1 trgswfft = trgswfftEnclvl1(-1,DEF_abk,key.lvl1);
+        TRGSWFFTlvl1 trgswfft = trgsw_fft_Enc_lvl1(-1,DEF_abk,key.lvl1);
 
         // cout << "gen trgswfft done" << endl;
 
         // External Product
         // TRGSW x TRLWE -> TRLWE  c に結果(TRLWE)が返る
-        trgswExternalProductlvl1(c,c,trgswfft);
+        trgsw_External_Product_lvl1(c,c,trgswfft);
 
         // cout << "external product done" << endl;
 
         // TRLWE で c の復号 復号したものをm2とする。
-        array<bool,DEF_N> m2 = trlweDeclvl1(c,key.lvl1);
+        array<bool,DEF_N> m2 = trlwe_Dec_lvl1(c,key.lvl1);
 
         // cout << "dec c done" << endl;
         

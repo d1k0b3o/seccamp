@@ -40,6 +40,12 @@ random
 ../RANDEN/randen.h
 -
 
+../include/detwfa.hpp
+../include/params.hpp
+-
+../include/trgsw.hpp
+-
+
 ../include/key.hpp
 array
 -
@@ -88,6 +94,8 @@ cmath
 ../include/mulfft.hpp
 -
 ../include/trgsw.hpp
+-
+../include/detwfa.hpp
 -
 
 ../include/tlwe.hpp

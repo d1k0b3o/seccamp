@@ -138,16 +138,18 @@ vector
 ../include/tfhe++.hpp
 -
 
-/home/hagarikuo/seccamp/TFHE/test/external_product_main.cpp
-iostream
--
+/home/hagarikuo/seccamp/TFHE/test/cmux_main.cpp
 array
 -
 vector
 -
+iostream
+-
 random
 -
 cassert
+-
+chrono
 -
 ../include/params.hpp
 -

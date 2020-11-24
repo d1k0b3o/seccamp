@@ -40,6 +40,12 @@ random
 ../RANDEN/randen.h
 -
 
+../include/detwfa.hpp
+../include/params.hpp
+-
+../include/trgsw.hpp
+-
+
 ../include/key.hpp
 array
 -
@@ -89,6 +95,8 @@ cmath
 -
 ../include/trgsw.hpp
 -
+../include/detwfa.hpp
+-
 
 ../include/tlwe.hpp
 array
@@ -128,6 +136,12 @@ vector
 ../RANDEN/randen.h
 -
 ../include/tfhe++.hpp
+-
+
+/home/hagarikuo/seccamp/TFHE/src/detwfa.cpp
+../include/params.hpp
+-
+../include/trgsw.hpp
 -
 
 /home/hagarikuo/seccamp/TFHE/src/tlwe.cpp

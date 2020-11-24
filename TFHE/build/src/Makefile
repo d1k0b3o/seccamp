@@ -125,6 +125,33 @@ TFHE/fast:
 	cd /home/hagarikuo/seccamp/TFHE/build && $(MAKE) -f src/CMakeFiles/TFHE.dir/build.make src/CMakeFiles/TFHE.dir/build
 .PHONY : TFHE/fast
 
+detwfa.o: detwfa.cpp.o
+
+.PHONY : detwfa.o
+
+# target to build an object file
+detwfa.cpp.o:
+	cd /home/hagarikuo/seccamp/TFHE/build && $(MAKE) -f src/CMakeFiles/TFHE.dir/build.make src/CMakeFiles/TFHE.dir/detwfa.cpp.o
+.PHONY : detwfa.cpp.o
+
+detwfa.i: detwfa.cpp.i
+
+.PHONY : detwfa.i
+
+# target to preprocess a source file
+detwfa.cpp.i:
+	cd /home/hagarikuo/seccamp/TFHE/build && $(MAKE) -f src/CMakeFiles/TFHE.dir/build.make src/CMakeFiles/TFHE.dir/detwfa.cpp.i
+.PHONY : detwfa.cpp.i
+
+detwfa.s: detwfa.cpp.s
+
+.PHONY : detwfa.s
+
+# target to generate assembly for a file
+detwfa.cpp.s:
+	cd /home/hagarikuo/seccamp/TFHE/build && $(MAKE) -f src/CMakeFiles/TFHE.dir/build.make src/CMakeFiles/TFHE.dir/detwfa.cpp.s
+.PHONY : detwfa.cpp.s
+
 tlwe.o: tlwe.cpp.o
 
 .PHONY : tlwe.o
@@ -215,6 +242,9 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... TFHE"
 	@echo "... edit_cache"
+	@echo "... detwfa.o"
+	@echo "... detwfa.i"
+	@echo "... detwfa.s"
 	@echo "... tlwe.o"
 	@echo "... tlwe.i"
 	@echo "... tlwe.s"

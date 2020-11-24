@@ -4,6 +4,7 @@
 test/CMakeFiles/tlwemain.dir/tlwemain.cpp.o: ../RANDEN/randen.h
 test/CMakeFiles/tlwemain.dir/tlwemain.cpp.o: ../SPQLIOS/spqlios-fft.h
 test/CMakeFiles/tlwemain.dir/tlwemain.cpp.o: ../include/common.hpp
+test/CMakeFiles/tlwemain.dir/tlwemain.cpp.o: ../include/detwfa.hpp
 test/CMakeFiles/tlwemain.dir/tlwemain.cpp.o: ../include/key.hpp
 test/CMakeFiles/tlwemain.dir/tlwemain.cpp.o: ../include/mulfft.hpp
 test/CMakeFiles/tlwemain.dir/tlwemain.cpp.o: ../include/params.hpp

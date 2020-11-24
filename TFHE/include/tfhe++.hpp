@@ -7,3 +7,4 @@
 #include<../include/trlwe.hpp>
 #include<../include/mulfft.hpp>
 #include<../include/trgsw.hpp>
+#include<../include/detwfa.hpp>
