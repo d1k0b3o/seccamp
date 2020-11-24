@@ -10,8 +10,21 @@ src/CMakeFiles/TFHE.dir/tlwe.cpp.o
  ../include/params.hpp
  ../include/tfhe++.hpp
  ../include/tlwe.hpp
+ ../include/trgsw.hpp
  ../include/trlwe.hpp
  /home/hagarikuo/seccamp/TFHE/src/tlwe.cpp
+src/CMakeFiles/TFHE.dir/trgsw.cpp.o
+ ../RANDEN/randen.h
+ ../SPQLIOS/spqlios-fft.h
+ ../include/common.hpp
+ ../include/key.hpp
+ ../include/mulfft.hpp
+ ../include/params.hpp
+ ../include/tfhe++.hpp
+ ../include/tlwe.hpp
+ ../include/trgsw.hpp
+ ../include/trlwe.hpp
+ /home/hagarikuo/seccamp/TFHE/src/trgsw.cpp
 src/CMakeFiles/TFHE.dir/trlwe.cpp.o
  ../RANDEN/randen.h
  ../SPQLIOS/spqlios-fft.h
@@ -21,5 +34,6 @@ src/CMakeFiles/TFHE.dir/trlwe.cpp.o
  ../include/params.hpp
  ../include/tfhe++.hpp
  ../include/tlwe.hpp
+ ../include/trgsw.hpp
  ../include/trlwe.hpp
  /home/hagarikuo/seccamp/TFHE/src/trlwe.cpp

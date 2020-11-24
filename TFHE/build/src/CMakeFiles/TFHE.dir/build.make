@@ -81,9 +81,33 @@ src/CMakeFiles/TFHE.dir/tlwe.cpp.o.provides: src/CMakeFiles/TFHE.dir/tlwe.cpp.o.
 src/CMakeFiles/TFHE.dir/tlwe.cpp.o.provides.build: src/CMakeFiles/TFHE.dir/tlwe.cpp.o
 
 
+src/CMakeFiles/TFHE.dir/trgsw.cpp.o: src/CMakeFiles/TFHE.dir/flags.make
+src/CMakeFiles/TFHE.dir/trgsw.cpp.o: ../src/trgsw.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/hagarikuo/seccamp/TFHE/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object src/CMakeFiles/TFHE.dir/trgsw.cpp.o"
+	cd /home/hagarikuo/seccamp/TFHE/build/src && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/TFHE.dir/trgsw.cpp.o -c /home/hagarikuo/seccamp/TFHE/src/trgsw.cpp
+
+src/CMakeFiles/TFHE.dir/trgsw.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/TFHE.dir/trgsw.cpp.i"
+	cd /home/hagarikuo/seccamp/TFHE/build/src && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/hagarikuo/seccamp/TFHE/src/trgsw.cpp > CMakeFiles/TFHE.dir/trgsw.cpp.i
+
+src/CMakeFiles/TFHE.dir/trgsw.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/TFHE.dir/trgsw.cpp.s"
+	cd /home/hagarikuo/seccamp/TFHE/build/src && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/hagarikuo/seccamp/TFHE/src/trgsw.cpp -o CMakeFiles/TFHE.dir/trgsw.cpp.s
+
+src/CMakeFiles/TFHE.dir/trgsw.cpp.o.requires:
+
+.PHONY : src/CMakeFiles/TFHE.dir/trgsw.cpp.o.requires
+
+src/CMakeFiles/TFHE.dir/trgsw.cpp.o.provides: src/CMakeFiles/TFHE.dir/trgsw.cpp.o.requires
+	$(MAKE) -f src/CMakeFiles/TFHE.dir/build.make src/CMakeFiles/TFHE.dir/trgsw.cpp.o.provides.build
+.PHONY : src/CMakeFiles/TFHE.dir/trgsw.cpp.o.provides
+
+src/CMakeFiles/TFHE.dir/trgsw.cpp.o.provides.build: src/CMakeFiles/TFHE.dir/trgsw.cpp.o
+
+
 src/CMakeFiles/TFHE.dir/trlwe.cpp.o: src/CMakeFiles/TFHE.dir/flags.make
 src/CMakeFiles/TFHE.dir/trlwe.cpp.o: ../src/trlwe.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/hagarikuo/seccamp/TFHE/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object src/CMakeFiles/TFHE.dir/trlwe.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/hagarikuo/seccamp/TFHE/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object src/CMakeFiles/TFHE.dir/trlwe.cpp.o"
 	cd /home/hagarikuo/seccamp/TFHE/build/src && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/TFHE.dir/trlwe.cpp.o -c /home/hagarikuo/seccamp/TFHE/src/trlwe.cpp
 
 src/CMakeFiles/TFHE.dir/trlwe.cpp.i: cmake_force
@@ -108,16 +132,18 @@ src/CMakeFiles/TFHE.dir/trlwe.cpp.o.provides.build: src/CMakeFiles/TFHE.dir/trlw
 # Object files for target TFHE
 TFHE_OBJECTS = \
 "CMakeFiles/TFHE.dir/tlwe.cpp.o" \
+"CMakeFiles/TFHE.dir/trgsw.cpp.o" \
 "CMakeFiles/TFHE.dir/trlwe.cpp.o"
 
 # External object files for target TFHE
 TFHE_EXTERNAL_OBJECTS =
 
 src/libTFHE.a: src/CMakeFiles/TFHE.dir/tlwe.cpp.o
+src/libTFHE.a: src/CMakeFiles/TFHE.dir/trgsw.cpp.o
 src/libTFHE.a: src/CMakeFiles/TFHE.dir/trlwe.cpp.o
 src/libTFHE.a: src/CMakeFiles/TFHE.dir/build.make
 src/libTFHE.a: src/CMakeFiles/TFHE.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/hagarikuo/seccamp/TFHE/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking CXX static library libTFHE.a"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/hagarikuo/seccamp/TFHE/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Linking CXX static library libTFHE.a"
 	cd /home/hagarikuo/seccamp/TFHE/build/src && $(CMAKE_COMMAND) -P CMakeFiles/TFHE.dir/cmake_clean_target.cmake
 	cd /home/hagarikuo/seccamp/TFHE/build/src && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/TFHE.dir/link.txt --verbose=$(VERBOSE)
 
@@ -127,6 +153,7 @@ src/CMakeFiles/TFHE.dir/build: src/libTFHE.a
 .PHONY : src/CMakeFiles/TFHE.dir/build
 
 src/CMakeFiles/TFHE.dir/requires: src/CMakeFiles/TFHE.dir/tlwe.cpp.o.requires
+src/CMakeFiles/TFHE.dir/requires: src/CMakeFiles/TFHE.dir/trgsw.cpp.o.requires
 src/CMakeFiles/TFHE.dir/requires: src/CMakeFiles/TFHE.dir/trlwe.cpp.o.requires
 
 .PHONY : src/CMakeFiles/TFHE.dir/requires

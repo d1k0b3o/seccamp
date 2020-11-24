@@ -150,19 +150,6 @@ SPQLIOS/fast:
 .PHONY : SPQLIOS/fast
 
 #=============================================================================
-# Target rules for targets named tlwemain
-
-# Build rule for target.
-tlwemain: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 tlwemain
-.PHONY : tlwemain
-
-# fast build rule for target.
-tlwemain/fast:
-	$(MAKE) -f test/CMakeFiles/tlwemain.dir/build.make test/CMakeFiles/tlwemain.dir/build
-.PHONY : tlwemain/fast
-
-#=============================================================================
 # Target rules for targets named trlwemain
 
 # Build rule for target.
@@ -175,6 +162,32 @@ trlwemain/fast:
 	$(MAKE) -f test/CMakeFiles/trlwemain.dir/build.make test/CMakeFiles/trlwemain.dir/build
 .PHONY : trlwemain/fast
 
+#=============================================================================
+# Target rules for targets named external_product_main
+
+# Build rule for target.
+external_product_main: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 external_product_main
+.PHONY : external_product_main
+
+# fast build rule for target.
+external_product_main/fast:
+	$(MAKE) -f test/CMakeFiles/external_product_main.dir/build.make test/CMakeFiles/external_product_main.dir/build
+.PHONY : external_product_main/fast
+
+#=============================================================================
+# Target rules for targets named tlwemain
+
+# Build rule for target.
+tlwemain: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 tlwemain
+.PHONY : tlwemain
+
+# fast build rule for target.
+tlwemain/fast:
+	$(MAKE) -f test/CMakeFiles/tlwemain.dir/build.make test/CMakeFiles/tlwemain.dir/build
+.PHONY : tlwemain/fast
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -186,8 +199,9 @@ help:
 	@echo "... TFHE"
 	@echo "... RANDEN"
 	@echo "... SPQLIOS"
-	@echo "... tlwemain"
 	@echo "... trlwemain"
+	@echo "... external_product_main"
+	@echo "... tlwemain"
 .PHONY : help
 
 

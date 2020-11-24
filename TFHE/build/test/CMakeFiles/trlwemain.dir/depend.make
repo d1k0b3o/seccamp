@@ -9,6 +9,7 @@ test/CMakeFiles/trlwemain.dir/trlwemain.cpp.o: ../include/mulfft.hpp
 test/CMakeFiles/trlwemain.dir/trlwemain.cpp.o: ../include/params.hpp
 test/CMakeFiles/trlwemain.dir/trlwemain.cpp.o: ../include/tfhe++.hpp
 test/CMakeFiles/trlwemain.dir/trlwemain.cpp.o: ../include/tlwe.hpp
+test/CMakeFiles/trlwemain.dir/trlwemain.cpp.o: ../include/trgsw.hpp
 test/CMakeFiles/trlwemain.dir/trlwemain.cpp.o: ../include/trlwe.hpp
 test/CMakeFiles/trlwemain.dir/trlwemain.cpp.o: ../test/trlwemain.cpp
 

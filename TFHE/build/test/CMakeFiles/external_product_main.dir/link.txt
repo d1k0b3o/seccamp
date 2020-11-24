@@ -1,0 +1,1 @@
+/usr/bin/c++  -march=native -std=c++17 -O3   CMakeFiles/external_product_main.dir/external_product_main.cpp.o  -o external_product_main ../src/libTFHE.a ../SPQLIOS/libSPQLIOS.a ../RANDEN/libRANDEN.a 

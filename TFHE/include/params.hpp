@@ -33,28 +33,30 @@ constexpr uint64_t DEF_nbar = 1 << DEF_nbarbit;
 #endif
 
 // 鍵の呼吸 壱ノ型
-using lwekeylvl0 = array<uint32_t,DEF_n>;
-using lwekeylvl1 = array<uint32_t,DEF_N>;
+using lwekeylvl0 = array<uint32_t,DEF_n>;                           // n
+using lwekeylvl1 = array<uint32_t,DEF_N>;                           // N
 
 // TLWE 暗号文の型 {a,b}
-using TLWElvl0 = array<uint32_t,DEF_n + 1>;
-using TLWElvl1 = array<uint32_t,DEF_N + 1>;
+using TLWElvl0 = array<uint32_t,DEF_n + 1>;                         // n+1
+using TLWElvl1 = array<uint32_t,DEF_N + 1>;                         // N+1
 
 // TRLWE の多項式の係数はそれぞれ DEF_N の TLWE となっている
-using Polynomiallvl1 = array<uint32_t,DEF_N>;
-using PolynomialInFDlvl1 = array<double,DEF_N>;
+using Polynomiallvl1 = array<uint32_t,DEF_N>;                       // N
+using PolynomialInFDlvl1 = array<double,DEF_N>;                     // N
 
 // TRLWE 暗号文cの型 c={a[X],b[X]}
-using TRLWElvl1 = array<Polynomiallvl1,2>;
-using TRLWEInFDlvl1 = array<PolynomialInFDlvl1,2>;
+using TRLWElvl1 = array<Polynomiallvl1,2>;                          // 2 x N                array<array<uint32_t,DEF_N>,2>
+using TRLWEInFDlvl1 = array<PolynomialInFDlvl1,2>;                  // 2 x N                array<array<double,DEF_N>,2>
 
-// Decomposition
-using DecomposedTRLWElvl1 = array<Polynomiallvl1, 2*DEF_l>;
-using DecomposedTRLWEInFDlvl1 = array<PolynomialInFDlvl1,2*DEF_l>;
+// Decomposition後の型
+using DecomposedTRLWElvl1 = array<Polynomiallvl1, 2*DEF_l>;         // (2*l) x N          array<array<uint32_t,DEF_N>,2*DEF_l>
+using DecomposedTRLWEInFDlvl1 = array<PolynomialInFDlvl1,2*DEF_l>;  // (2*l) x N          array<array<double,DEF_N>,2*DEF_l>
 
 // TRGSW 暗号文cの型
-using TRGSWlvl1 = array<TRLWElvl1,2*DEF_l>;
-using TRGSWInFDlvl1 = array<TRLWEInFDlvl1,2*DEF_l>;
+using TRGSWlvl1 = array<TRLWElvl1,2*DEF_l>;                         // (2*l) x (N x 2)    array<array<array<uint32_t,DEF_N>,2>,2*DEF_l>
+using TRGSWFFTlvl1 = array<TRLWEInFDlvl1,2*DEF_l>;                 // (2*l) x (N x 2)     array<array<array<double,DEF_N>,2>,2*DEF_l>
+
+
 
 struct lweparams{
     // Common

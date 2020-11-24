@@ -6,3 +6,4 @@
 #include<../include/tlwe.hpp>
 #include<../include/trlwe.hpp>
 #include<../include/mulfft.hpp>
+#include<../include/trgsw.hpp>

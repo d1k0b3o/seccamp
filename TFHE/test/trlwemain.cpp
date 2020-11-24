@@ -43,6 +43,7 @@
 #include<array>
 #include<vector>
 #include<random>
+#include<cassert>
 #include<../include/tfhe++.hpp>
 #include<../RANDEN/randen.h>
 
@@ -53,6 +54,8 @@ int main(){
 
     // random
     randen::Randen<uint64_t> engine;
+    bool flag=1;
+
     cout << "lvl1" << endl;
     for(int i=0;i < DEF_N;i++){
         // binary　の一様分布
@@ -78,8 +81,7 @@ int main(){
         m2=trlweDeclvl1(c,key.lvl1);
 
         // check
-        bool flag=1;
-        for(int i=0;i<DEF_n;i++) if(m[i]!=m2[i]) flag=0;
+        for(int i=0;i<DEF_n;i++) assert(m[i]==m2[i]);
     }
 
     if(flag) cout << "pass" << endl;

@@ -23,9 +23,9 @@ namespace myTFHE{
     }
 
 
-    // 負巡回乗算
+    // 負巡回乗算// 引数(res,a,b)
     template<uint32_t N>
-    inline void MulInFD(array<double,N> &res,const array<double,N> &a,const array<double,N> &b){
+    inline void MulInFD(array<double,N> &res, const array<double,N> &a, const array<double,N> &b){
 
         for(int i=0;i<N/2;i++){
             double a_image_b_image = a[i+N/2]*b[i+N/2];
@@ -36,4 +36,43 @@ namespace myTFHE{
         }
     }
 
+    //// 引き数(res,a,b)
+    template<uint32_t N>
+    inline void FMAInFD(array<double,N> &res, const array<double,N> &a, const array<double,N> &b){
+        for(int i=0;i<N/2;i++){
+            res[i]=a[i+N/2] * b[i+N/2] -res[i];
+            res[i]=a[i]*b[i]-res[i];
+            res[i+N/2] += a[i] * b[i+N/2];
+            res[i+N/2] += a[i+N/2] * b[i];
+        }
+    }
+
+
+    // 多項式乗算
+    // template<class T, class T1, class T2, uint32_t N>
+    // void poly_mult(array<T,N> &res, const array<T1,N> &a, const array<T2,N> &b){
+        
+    //     uint32_t tmp=0;
+
+    // }
+
+    // 多項式剰余
+//     array<int32_t,n> polymod(array<int32_t,2*DEF_N> &a){
+//         array<int32_t,DEF_N> res;
+
+//         int32_t tmp=0;
+//         int i=1;
+//         while(i<=n){
+//             tmp=a[2*n-i];
+//             a[2*n-i]-=tmp;
+//             a[2*n-(i+n)]-=tmp;
+//             ++i;
+//         }
+//         int j=0;
+//         while(j<n){
+//             res[j]=a[j];
+//             ++j;
+//         }
+//         return res;
+    // }
 }// myTFHE

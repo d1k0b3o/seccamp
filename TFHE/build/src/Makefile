@@ -152,6 +152,33 @@ tlwe.cpp.s:
 	cd /home/hagarikuo/seccamp/TFHE/build && $(MAKE) -f src/CMakeFiles/TFHE.dir/build.make src/CMakeFiles/TFHE.dir/tlwe.cpp.s
 .PHONY : tlwe.cpp.s
 
+trgsw.o: trgsw.cpp.o
+
+.PHONY : trgsw.o
+
+# target to build an object file
+trgsw.cpp.o:
+	cd /home/hagarikuo/seccamp/TFHE/build && $(MAKE) -f src/CMakeFiles/TFHE.dir/build.make src/CMakeFiles/TFHE.dir/trgsw.cpp.o
+.PHONY : trgsw.cpp.o
+
+trgsw.i: trgsw.cpp.i
+
+.PHONY : trgsw.i
+
+# target to preprocess a source file
+trgsw.cpp.i:
+	cd /home/hagarikuo/seccamp/TFHE/build && $(MAKE) -f src/CMakeFiles/TFHE.dir/build.make src/CMakeFiles/TFHE.dir/trgsw.cpp.i
+.PHONY : trgsw.cpp.i
+
+trgsw.s: trgsw.cpp.s
+
+.PHONY : trgsw.s
+
+# target to generate assembly for a file
+trgsw.cpp.s:
+	cd /home/hagarikuo/seccamp/TFHE/build && $(MAKE) -f src/CMakeFiles/TFHE.dir/build.make src/CMakeFiles/TFHE.dir/trgsw.cpp.s
+.PHONY : trgsw.cpp.s
+
 trlwe.o: trlwe.cpp.o
 
 .PHONY : trlwe.o
@@ -191,6 +218,9 @@ help:
 	@echo "... tlwe.o"
 	@echo "... tlwe.i"
 	@echo "... tlwe.s"
+	@echo "... trgsw.o"
+	@echo "... trgsw.i"
+	@echo "... trgsw.s"
 	@echo "... trlwe.o"
 	@echo "... trlwe.i"
 	@echo "... trlwe.s"

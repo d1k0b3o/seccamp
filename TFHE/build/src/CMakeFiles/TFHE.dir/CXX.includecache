@@ -87,6 +87,8 @@ cmath
 -
 ../include/mulfft.hpp
 -
+../include/trgsw.hpp
+-
 
 ../include/tlwe.hpp
 array
@@ -96,6 +98,24 @@ random
 vector
 -
 ../include/tfhe++.hpp
+-
+
+../include/trgsw.hpp
+array
+-
+random
+-
+vector
+-
+limits
+-
+../include/params.hpp
+-
+../include/tfhe++.hpp
+-
+../include/mulfft.hpp
+-
+../include/common.hpp
 -
 
 ../include/trlwe.hpp
@@ -120,6 +140,26 @@ vector
 ../include/tfhe++.hpp
 -
 ../RANDEN/randen.h
+-
+
+/home/hagarikuo/seccamp/TFHE/src/trgsw.cpp
+vector
+-
+array
+-
+limits
+-
+iostream
+-
+../include/params.hpp
+-
+../include/tfhe++.hpp
+-
+../include/mulfft.hpp
+-
+../include/common.hpp
+-
+../include/trlwe.hpp
 -
 
 /home/hagarikuo/seccamp/TFHE/src/trlwe.cpp

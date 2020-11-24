@@ -56,17 +56,6 @@ CMAKE_BINARY_DIR = /home/hagarikuo/seccamp/TFHE/build
 #=============================================================================
 # Targets provided globally by CMake.
 
-# Special rule for the target rebuild_cache
-rebuild_cache:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
-	/usr/bin/cmake -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
-.PHONY : rebuild_cache
-
-# Special rule for the target rebuild_cache
-rebuild_cache/fast: rebuild_cache
-
-.PHONY : rebuild_cache/fast
-
 # Special rule for the target edit_cache
 edit_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
@@ -77,6 +66,17 @@ edit_cache:
 edit_cache/fast: edit_cache
 
 .PHONY : edit_cache/fast
+
+# Special rule for the target rebuild_cache
+rebuild_cache:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
+	/usr/bin/cmake -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
+.PHONY : rebuild_cache
+
+# Special rule for the target rebuild_cache
+rebuild_cache/fast: rebuild_cache
+
+.PHONY : rebuild_cache/fast
 
 # The main all target
 all: cmake_check_build_system
@@ -111,6 +111,36 @@ depend:
 .PHONY : depend
 
 # Convenience name for target.
+test/CMakeFiles/trlwemain.dir/rule:
+	cd /home/hagarikuo/seccamp/TFHE/build && $(MAKE) -f CMakeFiles/Makefile2 test/CMakeFiles/trlwemain.dir/rule
+.PHONY : test/CMakeFiles/trlwemain.dir/rule
+
+# Convenience name for target.
+trlwemain: test/CMakeFiles/trlwemain.dir/rule
+
+.PHONY : trlwemain
+
+# fast build rule for target.
+trlwemain/fast:
+	cd /home/hagarikuo/seccamp/TFHE/build && $(MAKE) -f test/CMakeFiles/trlwemain.dir/build.make test/CMakeFiles/trlwemain.dir/build
+.PHONY : trlwemain/fast
+
+# Convenience name for target.
+test/CMakeFiles/external_product_main.dir/rule:
+	cd /home/hagarikuo/seccamp/TFHE/build && $(MAKE) -f CMakeFiles/Makefile2 test/CMakeFiles/external_product_main.dir/rule
+.PHONY : test/CMakeFiles/external_product_main.dir/rule
+
+# Convenience name for target.
+external_product_main: test/CMakeFiles/external_product_main.dir/rule
+
+.PHONY : external_product_main
+
+# fast build rule for target.
+external_product_main/fast:
+	cd /home/hagarikuo/seccamp/TFHE/build && $(MAKE) -f test/CMakeFiles/external_product_main.dir/build.make test/CMakeFiles/external_product_main.dir/build
+.PHONY : external_product_main/fast
+
+# Convenience name for target.
 test/CMakeFiles/tlwemain.dir/rule:
 	cd /home/hagarikuo/seccamp/TFHE/build && $(MAKE) -f CMakeFiles/Makefile2 test/CMakeFiles/tlwemain.dir/rule
 .PHONY : test/CMakeFiles/tlwemain.dir/rule
@@ -125,20 +155,32 @@ tlwemain/fast:
 	cd /home/hagarikuo/seccamp/TFHE/build && $(MAKE) -f test/CMakeFiles/tlwemain.dir/build.make test/CMakeFiles/tlwemain.dir/build
 .PHONY : tlwemain/fast
 
-# Convenience name for target.
-test/CMakeFiles/trlwemain.dir/rule:
-	cd /home/hagarikuo/seccamp/TFHE/build && $(MAKE) -f CMakeFiles/Makefile2 test/CMakeFiles/trlwemain.dir/rule
-.PHONY : test/CMakeFiles/trlwemain.dir/rule
+external_product_main.o: external_product_main.cpp.o
 
-# Convenience name for target.
-trlwemain: test/CMakeFiles/trlwemain.dir/rule
+.PHONY : external_product_main.o
 
-.PHONY : trlwemain
+# target to build an object file
+external_product_main.cpp.o:
+	cd /home/hagarikuo/seccamp/TFHE/build && $(MAKE) -f test/CMakeFiles/external_product_main.dir/build.make test/CMakeFiles/external_product_main.dir/external_product_main.cpp.o
+.PHONY : external_product_main.cpp.o
 
-# fast build rule for target.
-trlwemain/fast:
-	cd /home/hagarikuo/seccamp/TFHE/build && $(MAKE) -f test/CMakeFiles/trlwemain.dir/build.make test/CMakeFiles/trlwemain.dir/build
-.PHONY : trlwemain/fast
+external_product_main.i: external_product_main.cpp.i
+
+.PHONY : external_product_main.i
+
+# target to preprocess a source file
+external_product_main.cpp.i:
+	cd /home/hagarikuo/seccamp/TFHE/build && $(MAKE) -f test/CMakeFiles/external_product_main.dir/build.make test/CMakeFiles/external_product_main.dir/external_product_main.cpp.i
+.PHONY : external_product_main.cpp.i
+
+external_product_main.s: external_product_main.cpp.s
+
+.PHONY : external_product_main.s
+
+# target to generate assembly for a file
+external_product_main.cpp.s:
+	cd /home/hagarikuo/seccamp/TFHE/build && $(MAKE) -f test/CMakeFiles/external_product_main.dir/build.make test/CMakeFiles/external_product_main.dir/external_product_main.cpp.s
+.PHONY : external_product_main.cpp.s
 
 tlwemain.o: tlwemain.cpp.o
 
@@ -200,10 +242,14 @@ help:
 	@echo "... all (the default if no target is provided)"
 	@echo "... clean"
 	@echo "... depend"
-	@echo "... rebuild_cache"
-	@echo "... tlwemain"
 	@echo "... edit_cache"
 	@echo "... trlwemain"
+	@echo "... rebuild_cache"
+	@echo "... external_product_main"
+	@echo "... tlwemain"
+	@echo "... external_product_main.o"
+	@echo "... external_product_main.i"
+	@echo "... external_product_main.s"
 	@echo "... tlwemain.o"
 	@echo "... tlwemain.i"
 	@echo "... tlwemain.s"

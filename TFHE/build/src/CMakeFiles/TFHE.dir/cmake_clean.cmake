@@ -1,5 +1,6 @@
 file(REMOVE_RECURSE
   "CMakeFiles/TFHE.dir/tlwe.cpp.o"
+  "CMakeFiles/TFHE.dir/trgsw.cpp.o"
   "CMakeFiles/TFHE.dir/trlwe.cpp.o"
   "libTFHE.pdb"
   "libTFHE.a"

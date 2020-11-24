@@ -10,5 +10,6 @@ test/CMakeFiles/tlwemain.dir/tlwemain.cpp.o
  ../include/params.hpp
  ../include/tfhe++.hpp
  ../include/tlwe.hpp
+ ../include/trgsw.hpp
  ../include/trlwe.hpp
  /home/hagarikuo/seccamp/TFHE/test/tlwemain.cpp

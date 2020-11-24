@@ -130,7 +130,7 @@ vector
 ../include/tfhe++.hpp
 -
 
-/home/hagarikuo/seccamp/TFHE/test/trlwemain.cpp
+/home/hagarikuo/seccamp/TFHE/test/external_product_main.cpp
 iostream
 -
 array
@@ -141,8 +141,12 @@ random
 -
 cassert
 -
+../include/params.hpp
+-
 ../include/tfhe++.hpp
 -
 ../RANDEN/randen.h
+-
+../include/common.hpp
 -
 
