@@ -1,13 +1,14 @@
 # seccamp
 Work on seccamp!!
 
-Fast Fully Homomorphic Encryption on Torus
+TFHE (Fast Fully Homomorphic Encryption on Torus)
 
-# Reference
+
+## Reference
 
 [here](https://nindanaoto.github.io/)
 
-# Implement test
+## Implement test
 ```
 cd TFHE
 mkdir build
@@ -17,7 +18,7 @@ make
 ./test/{実行ファイル}
 ```
 
-# directry 
+## directry 
 ```
 -TFHE/
    -CMakeLists.txt
