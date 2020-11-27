@@ -81,7 +81,18 @@ int main(){
 
     // gen bootstrapping key (TRGSWlvl1)
     BootStrappingKeyFFTlvl01 bk;
-    bk = gen_bootstrapping_key(sk);
+
+    array<int32_t,DEF_n> tmp;
+    for(int i=0;i<DEF_n;i++){
+        tmp[i]=(int)sk.key.lvl0[i];
+    }
+    gen_bootstrapping_key3(bk,tmp,sk.key.lvl1);
+
+    // for(int i=0;i<DEF_n;i++){
+    //     bk[i] = gen_bootstrapping_key2(sk.key.lvl0[i],sk.key.lvl1);
+    // }
+
+    //bk = gen_bootstrapping_key(sk.key.lvl0,sk.key.lvl1);
 
     cout << "gen bootstrapping key ?" << endl;
 

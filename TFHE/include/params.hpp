@@ -57,6 +57,7 @@ using TRGSWlvl1 = array<TRLWElvl1,2*DEF_l>;                         // (2*l) x (
 using TRGSWFFTlvl1 = array<TRLWEInFDlvl1,2*DEF_l>;                  // (2*l) x (N x 2)     array<array<array<double,DEF_N>,2>,2*DEF_l>
 
 // Bootstrapping Key 鍵の型
+// lwekeylvl0 を 1bit ずつTRGSWに暗号化
 using BootStrappingKeyFFTlvl01 = array<TRGSWFFTlvl1,DEF_n>;         // n x ((2*l) x (2 x N)) array<array<array<array<double,DEF_N>,2>,2*DEF_l>,DEF_n>
 
 
