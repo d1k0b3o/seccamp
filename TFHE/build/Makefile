@@ -150,30 +150,17 @@ SPQLIOS/fast:
 .PHONY : SPQLIOS/fast
 
 #=============================================================================
-# Target rules for targets named trlwemain
+# Target rules for targets named blind_rotate_main
 
 # Build rule for target.
-trlwemain: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 trlwemain
-.PHONY : trlwemain
+blind_rotate_main: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 blind_rotate_main
+.PHONY : blind_rotate_main
 
 # fast build rule for target.
-trlwemain/fast:
-	$(MAKE) -f test/CMakeFiles/trlwemain.dir/build.make test/CMakeFiles/trlwemain.dir/build
-.PHONY : trlwemain/fast
-
-#=============================================================================
-# Target rules for targets named tlwemain
-
-# Build rule for target.
-tlwemain: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 tlwemain
-.PHONY : tlwemain
-
-# fast build rule for target.
-tlwemain/fast:
-	$(MAKE) -f test/CMakeFiles/tlwemain.dir/build.make test/CMakeFiles/tlwemain.dir/build
-.PHONY : tlwemain/fast
+blind_rotate_main/fast:
+	$(MAKE) -f test/CMakeFiles/blind_rotate_main.dir/build.make test/CMakeFiles/blind_rotate_main.dir/build
+.PHONY : blind_rotate_main/fast
 
 #=============================================================================
 # Target rules for targets named cmux_main
@@ -201,6 +188,32 @@ external_product_main/fast:
 	$(MAKE) -f test/CMakeFiles/external_product_main.dir/build.make test/CMakeFiles/external_product_main.dir/build
 .PHONY : external_product_main/fast
 
+#=============================================================================
+# Target rules for targets named tlwe_main
+
+# Build rule for target.
+tlwe_main: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 tlwe_main
+.PHONY : tlwe_main
+
+# fast build rule for target.
+tlwe_main/fast:
+	$(MAKE) -f test/CMakeFiles/tlwe_main.dir/build.make test/CMakeFiles/tlwe_main.dir/build
+.PHONY : tlwe_main/fast
+
+#=============================================================================
+# Target rules for targets named trlwe_main
+
+# Build rule for target.
+trlwe_main: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 trlwe_main
+.PHONY : trlwe_main
+
+# fast build rule for target.
+trlwe_main/fast:
+	$(MAKE) -f test/CMakeFiles/trlwe_main.dir/build.make test/CMakeFiles/trlwe_main.dir/build
+.PHONY : trlwe_main/fast
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -212,10 +225,11 @@ help:
 	@echo "... TFHE"
 	@echo "... RANDEN"
 	@echo "... SPQLIOS"
-	@echo "... trlwemain"
-	@echo "... tlwemain"
+	@echo "... blind_rotate_main"
 	@echo "... cmux_main"
 	@echo "... external_product_main"
+	@echo "... tlwe_main"
+	@echo "... trlwe_main"
 .PHONY : help
 
 

@@ -4,7 +4,7 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/home/hagarikuo/seccamp/TFHE/test/tlwemain.cpp" "/home/hagarikuo/seccamp/TFHE/build/test/CMakeFiles/tlwemain.dir/tlwemain.cpp.o"
+  "/home/hagarikuo/seccamp/TFHE/test/trlwe_main.cpp" "/home/hagarikuo/seccamp/TFHE/build/test/CMakeFiles/trlwe_main.dir/trlwe_main.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 

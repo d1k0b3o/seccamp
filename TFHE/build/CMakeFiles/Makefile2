@@ -84,7 +84,7 @@ src/preinstall:
 src/CMakeFiles/TFHE.dir/all:
 	$(MAKE) -f src/CMakeFiles/TFHE.dir/build.make src/CMakeFiles/TFHE.dir/depend
 	$(MAKE) -f src/CMakeFiles/TFHE.dir/build.make src/CMakeFiles/TFHE.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/hagarikuo/seccamp/TFHE/build/CMakeFiles --progress-num=8,9,10,11,12 "Built target TFHE"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/hagarikuo/seccamp/TFHE/build/CMakeFiles --progress-num=8,9,10,11,12,13 "Built target TFHE"
 .PHONY : src/CMakeFiles/TFHE.dir/all
 
 # Include target in all.
@@ -94,7 +94,7 @@ all: src/CMakeFiles/TFHE.dir/all
 
 # Build rule for subdir invocation for target.
 src/CMakeFiles/TFHE.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/hagarikuo/seccamp/TFHE/build/CMakeFiles 5
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/hagarikuo/seccamp/TFHE/build/CMakeFiles 6
 	$(MAKE) -f CMakeFiles/Makefile2 src/CMakeFiles/TFHE.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/hagarikuo/seccamp/TFHE/build/CMakeFiles 0
 .PHONY : src/CMakeFiles/TFHE.dir/rule
@@ -228,18 +228,20 @@ clean: SPQLIOS/CMakeFiles/SPQLIOS.dir/clean
 # Directory level rules for directory test
 
 # Convenience name for "all" pass in the directory.
-test/all: test/CMakeFiles/trlwemain.dir/all
-test/all: test/CMakeFiles/tlwemain.dir/all
+test/all: test/CMakeFiles/blind_rotate_main.dir/all
 test/all: test/CMakeFiles/cmux_main.dir/all
 test/all: test/CMakeFiles/external_product_main.dir/all
+test/all: test/CMakeFiles/tlwe_main.dir/all
+test/all: test/CMakeFiles/trlwe_main.dir/all
 
 .PHONY : test/all
 
 # Convenience name for "clean" pass in the directory.
-test/clean: test/CMakeFiles/trlwemain.dir/clean
-test/clean: test/CMakeFiles/tlwemain.dir/clean
+test/clean: test/CMakeFiles/blind_rotate_main.dir/clean
 test/clean: test/CMakeFiles/cmux_main.dir/clean
 test/clean: test/CMakeFiles/external_product_main.dir/clean
+test/clean: test/CMakeFiles/tlwe_main.dir/clean
+test/clean: test/CMakeFiles/trlwe_main.dir/clean
 
 .PHONY : test/clean
 
@@ -249,80 +251,41 @@ test/preinstall:
 .PHONY : test/preinstall
 
 #=============================================================================
-# Target rules for target test/CMakeFiles/trlwemain.dir
+# Target rules for target test/CMakeFiles/blind_rotate_main.dir
 
 # All Build rule for target.
-test/CMakeFiles/trlwemain.dir/all: src/CMakeFiles/TFHE.dir/all
-test/CMakeFiles/trlwemain.dir/all: RANDEN/CMakeFiles/RANDEN.dir/all
-test/CMakeFiles/trlwemain.dir/all: SPQLIOS/CMakeFiles/SPQLIOS.dir/all
-	$(MAKE) -f test/CMakeFiles/trlwemain.dir/build.make test/CMakeFiles/trlwemain.dir/depend
-	$(MAKE) -f test/CMakeFiles/trlwemain.dir/build.make test/CMakeFiles/trlwemain.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/hagarikuo/seccamp/TFHE/build/CMakeFiles --progress-num=19,20 "Built target trlwemain"
-.PHONY : test/CMakeFiles/trlwemain.dir/all
+test/CMakeFiles/blind_rotate_main.dir/all: src/CMakeFiles/TFHE.dir/all
+test/CMakeFiles/blind_rotate_main.dir/all: RANDEN/CMakeFiles/RANDEN.dir/all
+test/CMakeFiles/blind_rotate_main.dir/all: SPQLIOS/CMakeFiles/SPQLIOS.dir/all
+	$(MAKE) -f test/CMakeFiles/blind_rotate_main.dir/build.make test/CMakeFiles/blind_rotate_main.dir/depend
+	$(MAKE) -f test/CMakeFiles/blind_rotate_main.dir/build.make test/CMakeFiles/blind_rotate_main.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/hagarikuo/seccamp/TFHE/build/CMakeFiles --progress-num=14,15 "Built target blind_rotate_main"
+.PHONY : test/CMakeFiles/blind_rotate_main.dir/all
 
 # Include target in all.
-all: test/CMakeFiles/trlwemain.dir/all
+all: test/CMakeFiles/blind_rotate_main.dir/all
 
 .PHONY : all
 
 # Build rule for subdir invocation for target.
-test/CMakeFiles/trlwemain.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/hagarikuo/seccamp/TFHE/build/CMakeFiles 14
-	$(MAKE) -f CMakeFiles/Makefile2 test/CMakeFiles/trlwemain.dir/all
+test/CMakeFiles/blind_rotate_main.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/hagarikuo/seccamp/TFHE/build/CMakeFiles 15
+	$(MAKE) -f CMakeFiles/Makefile2 test/CMakeFiles/blind_rotate_main.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/hagarikuo/seccamp/TFHE/build/CMakeFiles 0
-.PHONY : test/CMakeFiles/trlwemain.dir/rule
+.PHONY : test/CMakeFiles/blind_rotate_main.dir/rule
 
 # Convenience name for target.
-trlwemain: test/CMakeFiles/trlwemain.dir/rule
+blind_rotate_main: test/CMakeFiles/blind_rotate_main.dir/rule
 
-.PHONY : trlwemain
-
-# clean rule for target.
-test/CMakeFiles/trlwemain.dir/clean:
-	$(MAKE) -f test/CMakeFiles/trlwemain.dir/build.make test/CMakeFiles/trlwemain.dir/clean
-.PHONY : test/CMakeFiles/trlwemain.dir/clean
+.PHONY : blind_rotate_main
 
 # clean rule for target.
-clean: test/CMakeFiles/trlwemain.dir/clean
-
-.PHONY : clean
-
-#=============================================================================
-# Target rules for target test/CMakeFiles/tlwemain.dir
-
-# All Build rule for target.
-test/CMakeFiles/tlwemain.dir/all: src/CMakeFiles/TFHE.dir/all
-test/CMakeFiles/tlwemain.dir/all: RANDEN/CMakeFiles/RANDEN.dir/all
-test/CMakeFiles/tlwemain.dir/all: SPQLIOS/CMakeFiles/SPQLIOS.dir/all
-	$(MAKE) -f test/CMakeFiles/tlwemain.dir/build.make test/CMakeFiles/tlwemain.dir/depend
-	$(MAKE) -f test/CMakeFiles/tlwemain.dir/build.make test/CMakeFiles/tlwemain.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/hagarikuo/seccamp/TFHE/build/CMakeFiles --progress-num=17,18 "Built target tlwemain"
-.PHONY : test/CMakeFiles/tlwemain.dir/all
-
-# Include target in all.
-all: test/CMakeFiles/tlwemain.dir/all
-
-.PHONY : all
-
-# Build rule for subdir invocation for target.
-test/CMakeFiles/tlwemain.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/hagarikuo/seccamp/TFHE/build/CMakeFiles 14
-	$(MAKE) -f CMakeFiles/Makefile2 test/CMakeFiles/tlwemain.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/hagarikuo/seccamp/TFHE/build/CMakeFiles 0
-.PHONY : test/CMakeFiles/tlwemain.dir/rule
-
-# Convenience name for target.
-tlwemain: test/CMakeFiles/tlwemain.dir/rule
-
-.PHONY : tlwemain
+test/CMakeFiles/blind_rotate_main.dir/clean:
+	$(MAKE) -f test/CMakeFiles/blind_rotate_main.dir/build.make test/CMakeFiles/blind_rotate_main.dir/clean
+.PHONY : test/CMakeFiles/blind_rotate_main.dir/clean
 
 # clean rule for target.
-test/CMakeFiles/tlwemain.dir/clean:
-	$(MAKE) -f test/CMakeFiles/tlwemain.dir/build.make test/CMakeFiles/tlwemain.dir/clean
-.PHONY : test/CMakeFiles/tlwemain.dir/clean
-
-# clean rule for target.
-clean: test/CMakeFiles/tlwemain.dir/clean
+clean: test/CMakeFiles/blind_rotate_main.dir/clean
 
 .PHONY : clean
 
@@ -335,7 +298,7 @@ test/CMakeFiles/cmux_main.dir/all: RANDEN/CMakeFiles/RANDEN.dir/all
 test/CMakeFiles/cmux_main.dir/all: SPQLIOS/CMakeFiles/SPQLIOS.dir/all
 	$(MAKE) -f test/CMakeFiles/cmux_main.dir/build.make test/CMakeFiles/cmux_main.dir/depend
 	$(MAKE) -f test/CMakeFiles/cmux_main.dir/build.make test/CMakeFiles/cmux_main.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/hagarikuo/seccamp/TFHE/build/CMakeFiles --progress-num=13,14 "Built target cmux_main"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/hagarikuo/seccamp/TFHE/build/CMakeFiles --progress-num=16,17 "Built target cmux_main"
 .PHONY : test/CMakeFiles/cmux_main.dir/all
 
 # Include target in all.
@@ -345,7 +308,7 @@ all: test/CMakeFiles/cmux_main.dir/all
 
 # Build rule for subdir invocation for target.
 test/CMakeFiles/cmux_main.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/hagarikuo/seccamp/TFHE/build/CMakeFiles 14
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/hagarikuo/seccamp/TFHE/build/CMakeFiles 15
 	$(MAKE) -f CMakeFiles/Makefile2 test/CMakeFiles/cmux_main.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/hagarikuo/seccamp/TFHE/build/CMakeFiles 0
 .PHONY : test/CMakeFiles/cmux_main.dir/rule
@@ -374,7 +337,7 @@ test/CMakeFiles/external_product_main.dir/all: RANDEN/CMakeFiles/RANDEN.dir/all
 test/CMakeFiles/external_product_main.dir/all: SPQLIOS/CMakeFiles/SPQLIOS.dir/all
 	$(MAKE) -f test/CMakeFiles/external_product_main.dir/build.make test/CMakeFiles/external_product_main.dir/depend
 	$(MAKE) -f test/CMakeFiles/external_product_main.dir/build.make test/CMakeFiles/external_product_main.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/hagarikuo/seccamp/TFHE/build/CMakeFiles --progress-num=15,16 "Built target external_product_main"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/hagarikuo/seccamp/TFHE/build/CMakeFiles --progress-num=18,19 "Built target external_product_main"
 .PHONY : test/CMakeFiles/external_product_main.dir/all
 
 # Include target in all.
@@ -384,7 +347,7 @@ all: test/CMakeFiles/external_product_main.dir/all
 
 # Build rule for subdir invocation for target.
 test/CMakeFiles/external_product_main.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/hagarikuo/seccamp/TFHE/build/CMakeFiles 14
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/hagarikuo/seccamp/TFHE/build/CMakeFiles 15
 	$(MAKE) -f CMakeFiles/Makefile2 test/CMakeFiles/external_product_main.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/hagarikuo/seccamp/TFHE/build/CMakeFiles 0
 .PHONY : test/CMakeFiles/external_product_main.dir/rule
@@ -401,6 +364,84 @@ test/CMakeFiles/external_product_main.dir/clean:
 
 # clean rule for target.
 clean: test/CMakeFiles/external_product_main.dir/clean
+
+.PHONY : clean
+
+#=============================================================================
+# Target rules for target test/CMakeFiles/tlwe_main.dir
+
+# All Build rule for target.
+test/CMakeFiles/tlwe_main.dir/all: src/CMakeFiles/TFHE.dir/all
+test/CMakeFiles/tlwe_main.dir/all: RANDEN/CMakeFiles/RANDEN.dir/all
+test/CMakeFiles/tlwe_main.dir/all: SPQLIOS/CMakeFiles/SPQLIOS.dir/all
+	$(MAKE) -f test/CMakeFiles/tlwe_main.dir/build.make test/CMakeFiles/tlwe_main.dir/depend
+	$(MAKE) -f test/CMakeFiles/tlwe_main.dir/build.make test/CMakeFiles/tlwe_main.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/hagarikuo/seccamp/TFHE/build/CMakeFiles --progress-num=20,21 "Built target tlwe_main"
+.PHONY : test/CMakeFiles/tlwe_main.dir/all
+
+# Include target in all.
+all: test/CMakeFiles/tlwe_main.dir/all
+
+.PHONY : all
+
+# Build rule for subdir invocation for target.
+test/CMakeFiles/tlwe_main.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/hagarikuo/seccamp/TFHE/build/CMakeFiles 15
+	$(MAKE) -f CMakeFiles/Makefile2 test/CMakeFiles/tlwe_main.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/hagarikuo/seccamp/TFHE/build/CMakeFiles 0
+.PHONY : test/CMakeFiles/tlwe_main.dir/rule
+
+# Convenience name for target.
+tlwe_main: test/CMakeFiles/tlwe_main.dir/rule
+
+.PHONY : tlwe_main
+
+# clean rule for target.
+test/CMakeFiles/tlwe_main.dir/clean:
+	$(MAKE) -f test/CMakeFiles/tlwe_main.dir/build.make test/CMakeFiles/tlwe_main.dir/clean
+.PHONY : test/CMakeFiles/tlwe_main.dir/clean
+
+# clean rule for target.
+clean: test/CMakeFiles/tlwe_main.dir/clean
+
+.PHONY : clean
+
+#=============================================================================
+# Target rules for target test/CMakeFiles/trlwe_main.dir
+
+# All Build rule for target.
+test/CMakeFiles/trlwe_main.dir/all: src/CMakeFiles/TFHE.dir/all
+test/CMakeFiles/trlwe_main.dir/all: RANDEN/CMakeFiles/RANDEN.dir/all
+test/CMakeFiles/trlwe_main.dir/all: SPQLIOS/CMakeFiles/SPQLIOS.dir/all
+	$(MAKE) -f test/CMakeFiles/trlwe_main.dir/build.make test/CMakeFiles/trlwe_main.dir/depend
+	$(MAKE) -f test/CMakeFiles/trlwe_main.dir/build.make test/CMakeFiles/trlwe_main.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/hagarikuo/seccamp/TFHE/build/CMakeFiles --progress-num=22,23 "Built target trlwe_main"
+.PHONY : test/CMakeFiles/trlwe_main.dir/all
+
+# Include target in all.
+all: test/CMakeFiles/trlwe_main.dir/all
+
+.PHONY : all
+
+# Build rule for subdir invocation for target.
+test/CMakeFiles/trlwe_main.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/hagarikuo/seccamp/TFHE/build/CMakeFiles 15
+	$(MAKE) -f CMakeFiles/Makefile2 test/CMakeFiles/trlwe_main.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/hagarikuo/seccamp/TFHE/build/CMakeFiles 0
+.PHONY : test/CMakeFiles/trlwe_main.dir/rule
+
+# Convenience name for target.
+trlwe_main: test/CMakeFiles/trlwe_main.dir/rule
+
+.PHONY : trlwe_main
+
+# clean rule for target.
+test/CMakeFiles/trlwe_main.dir/clean:
+	$(MAKE) -f test/CMakeFiles/trlwe_main.dir/build.make test/CMakeFiles/trlwe_main.dir/clean
+.PHONY : test/CMakeFiles/trlwe_main.dir/clean
+
+# clean rule for target.
+clean: test/CMakeFiles/trlwe_main.dir/clean
 
 .PHONY : clean
 

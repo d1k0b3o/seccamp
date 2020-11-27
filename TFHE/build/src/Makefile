@@ -152,6 +152,33 @@ detwfa.cpp.s:
 	cd /home/hagarikuo/seccamp/TFHE/build && $(MAKE) -f src/CMakeFiles/TFHE.dir/build.make src/CMakeFiles/TFHE.dir/detwfa.cpp.s
 .PHONY : detwfa.cpp.s
 
+gatebootstrapping_tlwelvl0_to_tlwelvl1.o: gatebootstrapping_tlwelvl0_to_tlwelvl1.cpp.o
+
+.PHONY : gatebootstrapping_tlwelvl0_to_tlwelvl1.o
+
+# target to build an object file
+gatebootstrapping_tlwelvl0_to_tlwelvl1.cpp.o:
+	cd /home/hagarikuo/seccamp/TFHE/build && $(MAKE) -f src/CMakeFiles/TFHE.dir/build.make src/CMakeFiles/TFHE.dir/gatebootstrapping_tlwelvl0_to_tlwelvl1.cpp.o
+.PHONY : gatebootstrapping_tlwelvl0_to_tlwelvl1.cpp.o
+
+gatebootstrapping_tlwelvl0_to_tlwelvl1.i: gatebootstrapping_tlwelvl0_to_tlwelvl1.cpp.i
+
+.PHONY : gatebootstrapping_tlwelvl0_to_tlwelvl1.i
+
+# target to preprocess a source file
+gatebootstrapping_tlwelvl0_to_tlwelvl1.cpp.i:
+	cd /home/hagarikuo/seccamp/TFHE/build && $(MAKE) -f src/CMakeFiles/TFHE.dir/build.make src/CMakeFiles/TFHE.dir/gatebootstrapping_tlwelvl0_to_tlwelvl1.cpp.i
+.PHONY : gatebootstrapping_tlwelvl0_to_tlwelvl1.cpp.i
+
+gatebootstrapping_tlwelvl0_to_tlwelvl1.s: gatebootstrapping_tlwelvl0_to_tlwelvl1.cpp.s
+
+.PHONY : gatebootstrapping_tlwelvl0_to_tlwelvl1.s
+
+# target to generate assembly for a file
+gatebootstrapping_tlwelvl0_to_tlwelvl1.cpp.s:
+	cd /home/hagarikuo/seccamp/TFHE/build && $(MAKE) -f src/CMakeFiles/TFHE.dir/build.make src/CMakeFiles/TFHE.dir/gatebootstrapping_tlwelvl0_to_tlwelvl1.cpp.s
+.PHONY : gatebootstrapping_tlwelvl0_to_tlwelvl1.cpp.s
+
 tlwe.o: tlwe.cpp.o
 
 .PHONY : tlwe.o
@@ -245,6 +272,9 @@ help:
 	@echo "... detwfa.o"
 	@echo "... detwfa.i"
 	@echo "... detwfa.s"
+	@echo "... gatebootstrapping_tlwelvl0_to_tlwelvl1.o"
+	@echo "... gatebootstrapping_tlwelvl0_to_tlwelvl1.i"
+	@echo "... gatebootstrapping_tlwelvl0_to_tlwelvl1.s"
 	@echo "... tlwe.o"
 	@echo "... tlwe.i"
 	@echo "... tlwe.s"

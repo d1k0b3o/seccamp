@@ -1,5 +1,6 @@
 file(REMOVE_RECURSE
   "CMakeFiles/TFHE.dir/detwfa.cpp.o"
+  "CMakeFiles/TFHE.dir/gatebootstrapping_tlwelvl0_to_tlwelvl1.cpp.o"
   "CMakeFiles/TFHE.dir/tlwe.cpp.o"
   "CMakeFiles/TFHE.dir/trgsw.cpp.o"
   "CMakeFiles/TFHE.dir/trlwe.cpp.o"

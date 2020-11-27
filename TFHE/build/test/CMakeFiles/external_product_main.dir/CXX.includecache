@@ -46,6 +46,22 @@ random
 ../include/trgsw.hpp
 -
 
+../include/gatebootstrapping_tlwelvl0_to_tlwelvl1.hpp
+array
+-
+vector
+-
+random
+-
+../include/params.hpp
+-
+../include/tfhe++.hpp
+-
+../include/common.hpp
+-
+../RANDEN/randen.h
+-
+
 ../include/key.hpp
 array
 -
@@ -96,6 +112,8 @@ cmath
 ../include/trgsw.hpp
 -
 ../include/detwfa.hpp
+-
+../include/gatebootstrapping_tlwelvl0_to_tlwelvl1.hpp
 -
 
 ../include/tlwe.hpp

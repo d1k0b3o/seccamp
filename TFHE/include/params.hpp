@@ -54,8 +54,10 @@ using DecomposedTRLWEInFDlvl1 = array<PolynomialInFDlvl1,2*DEF_l>;  // (2*l) x N
 
 // TRGSW 暗号文cの型
 using TRGSWlvl1 = array<TRLWElvl1,2*DEF_l>;                         // (2*l) x (N x 2)    array<array<array<uint32_t,DEF_N>,2>,2*DEF_l>
-using TRGSWFFTlvl1 = array<TRLWEInFDlvl1,2*DEF_l>;                 // (2*l) x (N x 2)     array<array<array<double,DEF_N>,2>,2*DEF_l>
+using TRGSWFFTlvl1 = array<TRLWEInFDlvl1,2*DEF_l>;                  // (2*l) x (N x 2)     array<array<array<double,DEF_N>,2>,2*DEF_l>
 
+// Bootstrapping Key 鍵の型
+using BootStrappingKeyFFTlvl01 = array<TRGSWFFTlvl1,DEF_n>;         // n x ((2*l) x (2 x N)) array<array<array<array<double,DEF_N>,2>,2*DEF_l>,DEF_n>
 
 
 struct lweparams{

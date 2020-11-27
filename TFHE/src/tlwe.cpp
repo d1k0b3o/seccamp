@@ -66,6 +66,21 @@ namespace myTFHE{
         //return tlweSymDecrypt<uint32_t,DEF_n>(c,key);
     }
 
+    template <typename T=uint32_t,uint32_t N=DEF_N>
+    bool tlwe_Sym_Dec_lvl1(const array<T,N+1> &c,const array<T,N> &key){
+        T b = c[N];
+        T tmp = 0;
+        for(int i=0;i<N;i++) tmp += c[i]*key[i];
+        // T を符号付きにする uint32_t -> int32_t
+        // bool res = int32_t(b-tmp) > 0;
+        bool res = static_cast<typename make_signed<T>::type>(b-tmp) > 0;
+        return res;
+    }
+
+    bool tlwe_Dec_lvl1(const TLWElvl1 &c, const lwekeylvl1 &key){
+        return tlwe_Sym_Dec_lvl1<uint32_t,DEF_N>(c,key);
+    }
+
     // tlwe の復号処理の呼び出し
     vector<uint8_t> tlwe_Dec(const vector<TLWElvl0> c,const secretkey &sk){
         // 復号してできる平文

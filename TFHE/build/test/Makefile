@@ -56,17 +56,6 @@ CMAKE_BINARY_DIR = /home/hagarikuo/seccamp/TFHE/build
 #=============================================================================
 # Targets provided globally by CMake.
 
-# Special rule for the target edit_cache
-edit_cache:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
-	/usr/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
-.PHONY : edit_cache
-
-# Special rule for the target edit_cache
-edit_cache/fast: edit_cache
-
-.PHONY : edit_cache/fast
-
 # Special rule for the target rebuild_cache
 rebuild_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
@@ -77,6 +66,17 @@ rebuild_cache:
 rebuild_cache/fast: rebuild_cache
 
 .PHONY : rebuild_cache/fast
+
+# Special rule for the target edit_cache
+edit_cache:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
+	/usr/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
+.PHONY : edit_cache
+
+# Special rule for the target edit_cache
+edit_cache/fast: edit_cache
+
+.PHONY : edit_cache/fast
 
 # The main all target
 all: cmake_check_build_system
@@ -111,34 +111,19 @@ depend:
 .PHONY : depend
 
 # Convenience name for target.
-test/CMakeFiles/trlwemain.dir/rule:
-	cd /home/hagarikuo/seccamp/TFHE/build && $(MAKE) -f CMakeFiles/Makefile2 test/CMakeFiles/trlwemain.dir/rule
-.PHONY : test/CMakeFiles/trlwemain.dir/rule
+test/CMakeFiles/blind_rotate_main.dir/rule:
+	cd /home/hagarikuo/seccamp/TFHE/build && $(MAKE) -f CMakeFiles/Makefile2 test/CMakeFiles/blind_rotate_main.dir/rule
+.PHONY : test/CMakeFiles/blind_rotate_main.dir/rule
 
 # Convenience name for target.
-trlwemain: test/CMakeFiles/trlwemain.dir/rule
+blind_rotate_main: test/CMakeFiles/blind_rotate_main.dir/rule
 
-.PHONY : trlwemain
+.PHONY : blind_rotate_main
 
 # fast build rule for target.
-trlwemain/fast:
-	cd /home/hagarikuo/seccamp/TFHE/build && $(MAKE) -f test/CMakeFiles/trlwemain.dir/build.make test/CMakeFiles/trlwemain.dir/build
-.PHONY : trlwemain/fast
-
-# Convenience name for target.
-test/CMakeFiles/tlwemain.dir/rule:
-	cd /home/hagarikuo/seccamp/TFHE/build && $(MAKE) -f CMakeFiles/Makefile2 test/CMakeFiles/tlwemain.dir/rule
-.PHONY : test/CMakeFiles/tlwemain.dir/rule
-
-# Convenience name for target.
-tlwemain: test/CMakeFiles/tlwemain.dir/rule
-
-.PHONY : tlwemain
-
-# fast build rule for target.
-tlwemain/fast:
-	cd /home/hagarikuo/seccamp/TFHE/build && $(MAKE) -f test/CMakeFiles/tlwemain.dir/build.make test/CMakeFiles/tlwemain.dir/build
-.PHONY : tlwemain/fast
+blind_rotate_main/fast:
+	cd /home/hagarikuo/seccamp/TFHE/build && $(MAKE) -f test/CMakeFiles/blind_rotate_main.dir/build.make test/CMakeFiles/blind_rotate_main.dir/build
+.PHONY : blind_rotate_main/fast
 
 # Convenience name for target.
 test/CMakeFiles/cmux_main.dir/rule:
@@ -169,6 +154,63 @@ external_product_main: test/CMakeFiles/external_product_main.dir/rule
 external_product_main/fast:
 	cd /home/hagarikuo/seccamp/TFHE/build && $(MAKE) -f test/CMakeFiles/external_product_main.dir/build.make test/CMakeFiles/external_product_main.dir/build
 .PHONY : external_product_main/fast
+
+# Convenience name for target.
+test/CMakeFiles/tlwe_main.dir/rule:
+	cd /home/hagarikuo/seccamp/TFHE/build && $(MAKE) -f CMakeFiles/Makefile2 test/CMakeFiles/tlwe_main.dir/rule
+.PHONY : test/CMakeFiles/tlwe_main.dir/rule
+
+# Convenience name for target.
+tlwe_main: test/CMakeFiles/tlwe_main.dir/rule
+
+.PHONY : tlwe_main
+
+# fast build rule for target.
+tlwe_main/fast:
+	cd /home/hagarikuo/seccamp/TFHE/build && $(MAKE) -f test/CMakeFiles/tlwe_main.dir/build.make test/CMakeFiles/tlwe_main.dir/build
+.PHONY : tlwe_main/fast
+
+# Convenience name for target.
+test/CMakeFiles/trlwe_main.dir/rule:
+	cd /home/hagarikuo/seccamp/TFHE/build && $(MAKE) -f CMakeFiles/Makefile2 test/CMakeFiles/trlwe_main.dir/rule
+.PHONY : test/CMakeFiles/trlwe_main.dir/rule
+
+# Convenience name for target.
+trlwe_main: test/CMakeFiles/trlwe_main.dir/rule
+
+.PHONY : trlwe_main
+
+# fast build rule for target.
+trlwe_main/fast:
+	cd /home/hagarikuo/seccamp/TFHE/build && $(MAKE) -f test/CMakeFiles/trlwe_main.dir/build.make test/CMakeFiles/trlwe_main.dir/build
+.PHONY : trlwe_main/fast
+
+blind_rotate_main.o: blind_rotate_main.cpp.o
+
+.PHONY : blind_rotate_main.o
+
+# target to build an object file
+blind_rotate_main.cpp.o:
+	cd /home/hagarikuo/seccamp/TFHE/build && $(MAKE) -f test/CMakeFiles/blind_rotate_main.dir/build.make test/CMakeFiles/blind_rotate_main.dir/blind_rotate_main.cpp.o
+.PHONY : blind_rotate_main.cpp.o
+
+blind_rotate_main.i: blind_rotate_main.cpp.i
+
+.PHONY : blind_rotate_main.i
+
+# target to preprocess a source file
+blind_rotate_main.cpp.i:
+	cd /home/hagarikuo/seccamp/TFHE/build && $(MAKE) -f test/CMakeFiles/blind_rotate_main.dir/build.make test/CMakeFiles/blind_rotate_main.dir/blind_rotate_main.cpp.i
+.PHONY : blind_rotate_main.cpp.i
+
+blind_rotate_main.s: blind_rotate_main.cpp.s
+
+.PHONY : blind_rotate_main.s
+
+# target to generate assembly for a file
+blind_rotate_main.cpp.s:
+	cd /home/hagarikuo/seccamp/TFHE/build && $(MAKE) -f test/CMakeFiles/blind_rotate_main.dir/build.make test/CMakeFiles/blind_rotate_main.dir/blind_rotate_main.cpp.s
+.PHONY : blind_rotate_main.cpp.s
 
 cmux_main.o: cmux_main.cpp.o
 
@@ -224,59 +266,59 @@ external_product_main.cpp.s:
 	cd /home/hagarikuo/seccamp/TFHE/build && $(MAKE) -f test/CMakeFiles/external_product_main.dir/build.make test/CMakeFiles/external_product_main.dir/external_product_main.cpp.s
 .PHONY : external_product_main.cpp.s
 
-tlwemain.o: tlwemain.cpp.o
+tlwe_main.o: tlwe_main.cpp.o
 
-.PHONY : tlwemain.o
-
-# target to build an object file
-tlwemain.cpp.o:
-	cd /home/hagarikuo/seccamp/TFHE/build && $(MAKE) -f test/CMakeFiles/tlwemain.dir/build.make test/CMakeFiles/tlwemain.dir/tlwemain.cpp.o
-.PHONY : tlwemain.cpp.o
-
-tlwemain.i: tlwemain.cpp.i
-
-.PHONY : tlwemain.i
-
-# target to preprocess a source file
-tlwemain.cpp.i:
-	cd /home/hagarikuo/seccamp/TFHE/build && $(MAKE) -f test/CMakeFiles/tlwemain.dir/build.make test/CMakeFiles/tlwemain.dir/tlwemain.cpp.i
-.PHONY : tlwemain.cpp.i
-
-tlwemain.s: tlwemain.cpp.s
-
-.PHONY : tlwemain.s
-
-# target to generate assembly for a file
-tlwemain.cpp.s:
-	cd /home/hagarikuo/seccamp/TFHE/build && $(MAKE) -f test/CMakeFiles/tlwemain.dir/build.make test/CMakeFiles/tlwemain.dir/tlwemain.cpp.s
-.PHONY : tlwemain.cpp.s
-
-trlwemain.o: trlwemain.cpp.o
-
-.PHONY : trlwemain.o
+.PHONY : tlwe_main.o
 
 # target to build an object file
-trlwemain.cpp.o:
-	cd /home/hagarikuo/seccamp/TFHE/build && $(MAKE) -f test/CMakeFiles/trlwemain.dir/build.make test/CMakeFiles/trlwemain.dir/trlwemain.cpp.o
-.PHONY : trlwemain.cpp.o
+tlwe_main.cpp.o:
+	cd /home/hagarikuo/seccamp/TFHE/build && $(MAKE) -f test/CMakeFiles/tlwe_main.dir/build.make test/CMakeFiles/tlwe_main.dir/tlwe_main.cpp.o
+.PHONY : tlwe_main.cpp.o
 
-trlwemain.i: trlwemain.cpp.i
+tlwe_main.i: tlwe_main.cpp.i
 
-.PHONY : trlwemain.i
+.PHONY : tlwe_main.i
 
 # target to preprocess a source file
-trlwemain.cpp.i:
-	cd /home/hagarikuo/seccamp/TFHE/build && $(MAKE) -f test/CMakeFiles/trlwemain.dir/build.make test/CMakeFiles/trlwemain.dir/trlwemain.cpp.i
-.PHONY : trlwemain.cpp.i
+tlwe_main.cpp.i:
+	cd /home/hagarikuo/seccamp/TFHE/build && $(MAKE) -f test/CMakeFiles/tlwe_main.dir/build.make test/CMakeFiles/tlwe_main.dir/tlwe_main.cpp.i
+.PHONY : tlwe_main.cpp.i
 
-trlwemain.s: trlwemain.cpp.s
+tlwe_main.s: tlwe_main.cpp.s
 
-.PHONY : trlwemain.s
+.PHONY : tlwe_main.s
 
 # target to generate assembly for a file
-trlwemain.cpp.s:
-	cd /home/hagarikuo/seccamp/TFHE/build && $(MAKE) -f test/CMakeFiles/trlwemain.dir/build.make test/CMakeFiles/trlwemain.dir/trlwemain.cpp.s
-.PHONY : trlwemain.cpp.s
+tlwe_main.cpp.s:
+	cd /home/hagarikuo/seccamp/TFHE/build && $(MAKE) -f test/CMakeFiles/tlwe_main.dir/build.make test/CMakeFiles/tlwe_main.dir/tlwe_main.cpp.s
+.PHONY : tlwe_main.cpp.s
+
+trlwe_main.o: trlwe_main.cpp.o
+
+.PHONY : trlwe_main.o
+
+# target to build an object file
+trlwe_main.cpp.o:
+	cd /home/hagarikuo/seccamp/TFHE/build && $(MAKE) -f test/CMakeFiles/trlwe_main.dir/build.make test/CMakeFiles/trlwe_main.dir/trlwe_main.cpp.o
+.PHONY : trlwe_main.cpp.o
+
+trlwe_main.i: trlwe_main.cpp.i
+
+.PHONY : trlwe_main.i
+
+# target to preprocess a source file
+trlwe_main.cpp.i:
+	cd /home/hagarikuo/seccamp/TFHE/build && $(MAKE) -f test/CMakeFiles/trlwe_main.dir/build.make test/CMakeFiles/trlwe_main.dir/trlwe_main.cpp.i
+.PHONY : trlwe_main.cpp.i
+
+trlwe_main.s: trlwe_main.cpp.s
+
+.PHONY : trlwe_main.s
+
+# target to generate assembly for a file
+trlwe_main.cpp.s:
+	cd /home/hagarikuo/seccamp/TFHE/build && $(MAKE) -f test/CMakeFiles/trlwe_main.dir/build.make test/CMakeFiles/trlwe_main.dir/trlwe_main.cpp.s
+.PHONY : trlwe_main.cpp.s
 
 # Help Target
 help:
@@ -284,24 +326,28 @@ help:
 	@echo "... all (the default if no target is provided)"
 	@echo "... clean"
 	@echo "... depend"
-	@echo "... edit_cache"
-	@echo "... trlwemain"
-	@echo "... tlwemain"
-	@echo "... cmux_main"
 	@echo "... rebuild_cache"
+	@echo "... blind_rotate_main"
+	@echo "... cmux_main"
+	@echo "... edit_cache"
 	@echo "... external_product_main"
+	@echo "... tlwe_main"
+	@echo "... trlwe_main"
+	@echo "... blind_rotate_main.o"
+	@echo "... blind_rotate_main.i"
+	@echo "... blind_rotate_main.s"
 	@echo "... cmux_main.o"
 	@echo "... cmux_main.i"
 	@echo "... cmux_main.s"
 	@echo "... external_product_main.o"
 	@echo "... external_product_main.i"
 	@echo "... external_product_main.s"
-	@echo "... tlwemain.o"
-	@echo "... tlwemain.i"
-	@echo "... tlwemain.s"
-	@echo "... trlwemain.o"
-	@echo "... trlwemain.i"
-	@echo "... trlwemain.s"
+	@echo "... tlwe_main.o"
+	@echo "... tlwe_main.i"
+	@echo "... tlwe_main.s"
+	@echo "... trlwe_main.o"
+	@echo "... trlwe_main.i"
+	@echo "... trlwe_main.s"
 .PHONY : help
 
 

@@ -38,6 +38,7 @@
 #include<array>
 #include<random>
 #include<vector>
+#include<cassert>
 #include<../RANDEN/randen.h>
 #include<../include/tfhe++.hpp>
 
@@ -61,7 +62,11 @@ int main(){
     vector<uint8_t> m(DEF_n);
     for(uint8_t &i : m) i=binary(engine);
 
-    // sk で m を暗号化 暗号文 c はn*(n+1)行列の形
+    // // m -> myu
+    // vector<uint32_t> myu(DEF_n);
+    // for(int i=0;i<DEF_n;i++) myu[i] = m[i] ? DEF_myu : -DEF_myu;
+
+    // sk で m を暗号化 暗号文 c はn x (n+1)行列の形
     vector<TLWElvl0> c(DEF_n);
     c=tlwe_Enc(m,sk);
 
@@ -70,8 +75,12 @@ int main(){
     m2=tlwe_Dec(c,sk);
 
     //m=m2なら"pass" ?
-    bool flag=1;
-    for(int i=0;i<DEF_n;i++) if(m[i]!=m2[i]) flag=0;
-    if(flag) cout << "pass" << endl;
-    else cout << "miss" << endl;
+    for(int i=0;i<DEF_n;i++) assert(m[i]==m2[i]);
+
+    cout << "PASS!" << endl;
+
+    // bool flag=1;
+    // for(int i=0;i<DEF_n;i++) if(m[i]!=m2[i]) flag=0;
+    // if(flag) cout << "pass" << endl;
+    // else cout << "miss" << endl;
 }
