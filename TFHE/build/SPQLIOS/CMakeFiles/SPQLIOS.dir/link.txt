@@ -1,0 +1,2 @@
+/usr/bin/ar qc libSPQLIOS.a  CMakeFiles/SPQLIOS.dir/spqlios-fft-fma.s.o CMakeFiles/SPQLIOS.dir/spqlios-ifft-fma.s.o CMakeFiles/SPQLIOS.dir/fft_processor_spqlios.cpp.o CMakeFiles/SPQLIOS.dir/spqlios-fft-impl.cpp.o
+/usr/bin/ranlib libSPQLIOS.a

@@ -55,38 +55,17 @@ int main(){
     // gen sk
     secretkey sk;
 
-    cout << "gen sk ?" << endl;
-
-    // gen in_plain_message as in_m
-    uint8_t in_m = binary(engine);
-
-    cout << "gen m ?" << endl;
-
-    // in_m -> myu
-    uint32_t myu= in_m ? DEF_myu : DEF_myu;
-
-    cout << "gen m -> myu ?" << endl;
-
-    // Enc in_m
-    // tlwe   DEF_n x DEF_n
-    TLWElvl0 tlwe;
-    tlwe = tlwe_Enc_lvl0(myu,DEF_alpha,sk.key.lvl0);
-
-    cout << "enc ?" << endl;
-
-    // gen testvector (trivial cipher)
-    TRLWElvl1 testvector = gen_testvector();
-
-    cout << "gen testvector ?" << endl;
+    //cout << "gen sk ?" << endl;
 
     // gen bootstrapping key (TRGSWlvl1)
-    BootStrappingKeyFFTlvl01 bk;
+    BootStrappingKeyFFTlvl01 *bk = new BootStrappingKeyFFTlvl01;
 
     array<int32_t,DEF_n> tmp;
     for(int i=0;i<DEF_n;i++){
         tmp[i]=(int)sk.key.lvl0[i];
     }
-    gen_bootstrapping_key3(bk,tmp,sk.key.lvl1);
+    gen_bootstrapping_key3(*bk,tmp,sk.key.lvl1);
+   
 
     // for(int i=0;i<DEF_n;i++){
     //     bk[i] = gen_bootstrapping_key2(sk.key.lvl0[i],sk.key.lvl1);
@@ -94,28 +73,56 @@ int main(){
 
     //bk = gen_bootstrapping_key(sk.key.lvl0,sk.key.lvl1);
 
-    cout << "gen bootstrapping key ?" << endl;
+    //cout << "gen bootstrapping key ?" << endl;
 
-    // // Blind Rotate
-    // TRLWElvl1 res_trlwe;
-    // Blind_Rotate(res_trlwe,testvector,tlwe,bk);
+    int num_test = 100;
+    
+    for(int test=0;test<num_test;test++){
 
-    // cout << "do rotate ?" << endl;
+    // gen in_plain_message as in_m
+    uint8_t in_m = binary(engine);
 
-    // // Sample Extract Index (0)
-    // TLWElvl1 res_tlwe;
-    // Sample_Extract_Index_lvl1(res_tlwe,res_trlwe,0);
+    //cout << "gen m ?" << endl;
 
-    // cout << "sample extract ?" << endl;
+    // in_m -> myu
+    uint32_t myu= in_m ? DEF_myu : DEF_myu;
 
-    // // Dec res_tlwe
-    // uint8_t out_m;
-    // out_m=tlwe_Dec_lvl1(res_tlwe,sk.key.lvl1);
+    //cout << "gen m -> myu ?" << endl;
 
-    // cout << "dec ?" << endl;
+    // Enc in_m
+    // tlwe   DEF_n x DEF_n
+    TLWElvl0 tlwe;
+    tlwe = tlwe_Enc_lvl0(myu,DEF_alpha,sk.key.lvl0);
 
-    // // check m==m2
-    // assert(in_m==out_m);
+    //cout << "enc ?" << endl;
+
+    // gen testvector (trivial cipher)
+    TRLWElvl1 testvector = gen_testvector();
+
+    //cout << "gen testvector ?" << endl;
+
+    // Blind Rotate
+    TRLWElvl1 res_trlwe;
+    Blind_Rotate(res_trlwe,testvector,tlwe,*bk);
+
+    //cout << "do rotate ?" << endl;
+
+    // Sample Extract Index (0)
+    TLWElvl1 res_tlwe;
+    Sample_Extract_Index_lvl1(res_tlwe,res_trlwe,0);
+
+    //cout << "sample extract ?" << endl;
+
+    // Dec res_tlwe
+    uint8_t out_m;
+    out_m=tlwe_Dec_lvl1(res_tlwe,sk.key.lvl1);
+
+    //cout << "dec ?" << endl;
+
+    // check in_m==out_m
+    assert(in_m==out_m);
+
+    }
 
     cout << "PASS!" << endl;
 

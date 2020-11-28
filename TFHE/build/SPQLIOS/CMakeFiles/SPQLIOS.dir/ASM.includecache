@@ -1,0 +1,12 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/hagarikuo/seccamp/TFHE/SPQLIOS/spqlios-fft-fma.s
+
+/home/hagarikuo/seccamp/TFHE/SPQLIOS/spqlios-ifft-fma.s
+

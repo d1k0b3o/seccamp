@@ -1,0 +1,2 @@
+/usr/bin/ar qc libRANDEN.a  CMakeFiles/RANDEN.dir/randen.cc.o
+/usr/bin/ranlib libRANDEN.a
