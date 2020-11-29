@@ -1,1 +1,0 @@
-/usr/bin/c++  -march=native -std=c++17 -O3   CMakeFiles/tlwe_main.dir/tlwe_main.cpp.o  -o tlwe_main ../src/libTFHE.a ../SPQLIOS/libSPQLIOS.a ../RANDEN/libRANDEN.a 
