@@ -15,7 +15,7 @@ mkdir build
 cd build
 cmake ..
 make
-./test/{実行ファイル}
+./test/{ a Executable File }
 ```
 
 ## directry 
