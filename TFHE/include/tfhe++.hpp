@@ -8,4 +8,4 @@
 #include<../include/mulfft.hpp>
 #include<../include/trgsw.hpp>
 #include<../include/detwfa.hpp>
-#include<../include/gatebootstrapping_tlwelvl0_to_tlwelvl1.hpp>
+#include<../include/gatebootstrapping.hpp>

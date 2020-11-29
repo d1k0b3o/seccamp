@@ -50,7 +50,7 @@ make
     │   ├── cloudkey.hpp
     │   ├── common.hpp
     │   ├── detwfa.hpp
-    │   ├── gatebootstrapping_tlwelvl0_to_tlwelvl1.hpp
+    │   ├── gatebootstrapping.hpp
     │   ├── key.hpp
     │   ├── keyswitch.hpp
     │   ├── mulfft.hpp
@@ -62,7 +62,7 @@ make
     ├── src
     │   ├── CMakeLists.txt
     │   ├── detwfa.cpp
-    │   ├── gatebootstrapping_tlwelvl0_to_tlwelvl1.cpp
+    │   ├── gatebootstrapping.cpp
     │   ├── keyswitch.cpp
     │   ├── tlwe.cpp
     │   ├── trgsw.cpp
