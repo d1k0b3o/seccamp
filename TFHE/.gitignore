@@ -4,3 +4,5 @@ build
 .vscode
 /.gitignore
 .gitignore
+error_log
+/error_log/
