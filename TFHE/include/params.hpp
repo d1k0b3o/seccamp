@@ -27,6 +27,10 @@ constexpr uint32_t DEF_l = 3;
 constexpr uint32_t DEF_Bgbit = 6;
 constexpr uint32_t DEF_Bg = 1 << DEF_Bgbit;     // Bg=64
 
+// Identity Key Switch security prams
+constexpr uint32_t DEF_basebit = 2;
+constexpr uint32_t DEF_t = 8;
+
 constexpr uint64_t DEF_nbarbit = 11;
 constexpr uint64_t DEF_nbar = 1 << DEF_nbarbit;
 
@@ -78,6 +82,10 @@ struct lweparams{
     uint32_t l=DEF_l;
     uint32_t Bgbit=DEF_Bgbit;
     uint32_t Bg=DEF_Bg;
+
+    // Identity Key Switch security params
+    uint32_t basebit = DEF_basebit;
+    uint32_t t = DEF_t;
 
 };
 

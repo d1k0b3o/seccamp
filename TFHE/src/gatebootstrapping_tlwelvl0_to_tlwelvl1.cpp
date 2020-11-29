@@ -89,6 +89,7 @@ namespace myTFHE{
         uint32_t b_til = 2*DEF_N - (tlwe[DEF_n] +(1 << (31 - DEF_Nbit -1)) >> (32 - DEF_Nbit -1));
         
         TRLWElvl1 trlwe0;
+    
         for(int i=0;i<DEF_N;i++){
             trlwe0[0][i] = 0;
             trlwe0[1][i] = 0;
@@ -98,9 +99,10 @@ namespace myTFHE{
         Poly_Mul_By_X_i(trlwe0[0],testvector[0],b_til);
         Poly_Mul_By_X_i(trlwe0[1],testvector[1],b_til);
 
+
         // 
         for(int i=0;i<DEF_n;i++){
-            TRLWElvl1 trlwe1 = trlwe0;
+            TRLWElvl1 trlwe1;
             // a_til tlwe aの丸め
             uint32_t a_til = (tlwe[i] +(1 << (31 - DEF_Nbit -1)) >> (32 - DEF_Nbit -1));
 
@@ -108,8 +110,10 @@ namespace myTFHE{
             Poly_Mul_By_X_i(trlwe1[0],trlwe0[0],a_til);
             Poly_Mul_By_X_i(trlwe1[1],trlwe0[1],a_til);
 
-        // CMUX Dec(BK_i) ? trlwe1 : trlwe0
+            // CMUX Dec(BK_i) ? trlwe1 : trlwe0
             CMUX_lvl1(res_trlwe,bk[i],trlwe1,trlwe0);
+
+            trlwe0 = res_trlwe;
         }
         return res_trlwe;
     }

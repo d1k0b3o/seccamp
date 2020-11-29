@@ -60,7 +60,7 @@ namespace myTFHE{
         for(int i=0;i<=index;i++){
             tlwe[i] = trlwe[0][index - i];
         }
-        for(int i=0;i<N;i++){
+        for(int i=index+1;i<N;i++){
             tlwe[i] = -trlwe[0][N + index - i];
         }
         // b'=b_k

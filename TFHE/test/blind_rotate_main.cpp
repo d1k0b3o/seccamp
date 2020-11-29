@@ -84,14 +84,15 @@ int main(){
 
     //cout << "gen m ?" << endl;
 
-    // in_m -> myu
-    uint32_t myu= in_m ? DEF_myu : DEF_myu;
+    //in_m -> myu
+    uint32_t myu= in_m ? DEF_myu : -DEF_myu;
 
     //cout << "gen m -> myu ?" << endl;
 
     // Enc in_m
     // tlwe   DEF_n x DEF_n
     TLWElvl0 tlwe;
+    //tlwe = tlwe_Enc(in_m,sk.key.lvl0);
     tlwe = tlwe_Enc_lvl0(myu,DEF_alpha,sk.key.lvl0);
 
     //cout << "enc ?" << endl;

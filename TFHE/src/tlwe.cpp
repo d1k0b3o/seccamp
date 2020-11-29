@@ -35,6 +35,28 @@ namespace myTFHE{
         return tlwe_Sym_Enc<uint32_t,DEF_n>(m,alpha,key);
     }
 
+    // Id_Key_Switch
+    template <typename T=uint32_t,uint32_t N=DEF_N>
+    inline array<T,N+1> tlwe_Sym_Enc_lvl1(const T myu, const double alpha, const array<uint32_t,N> &key){
+
+        uniform_int_distribution<T> Torusdist(0,numeric_limits<T>::max());
+
+        array<T,N+1> res={};
+
+        res[N] = gaussian_32(myu,alpha);
+
+        for(int i=0;i<N;++i){
+            res[i]=Torusdist(engine);
+            res[N]+=res[i]*key[i];
+        }
+        return res;
+    }
+    
+    TLWElvl1 tlwe_Enc_lvl1(const uint32_t m,const double alpha, const lwekeylvl1 &key){
+        
+        return tlwe_Sym_Enc_lvl1<uint32_t,DEF_N>(m ? DEF_myu : -DEF_myu,alpha,key);
+    }
+
     // tlwe の暗号化処理呼び出し　
     vector<TLWElvl0> tlwe_Enc(const vector<uint8_t> &m,const secretkey &sk){
         vector<TLWElvl0> c(m.size());
