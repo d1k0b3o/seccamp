@@ -1,2 +1,2 @@
-../TFHE/build
-../TFHE/.vscode
+/build/
+/.vscode/
