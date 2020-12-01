@@ -40,7 +40,7 @@ namespace myTFHE{
 
                 if(k){
                     res_tlwe0[i] -= ksk[i][j][k][i];
-                    res_tlwe0[DEF_n] = ksk[i][j][k][DEF_n];
+                    res_tlwe0[DEF_n] -= ksk[i][j][k][DEF_n];
                 }
             }
         }
