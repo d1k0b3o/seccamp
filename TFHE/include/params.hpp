@@ -64,6 +64,8 @@ using TRGSWFFTlvl1 = array<TRLWEInFDlvl1,2*DEF_l>;                  // (2*l) x (
 // lwekeylvl0 を 1bit ずつTRGSWに暗号化
 using BootStrappingKeyFFTlvl01 = array<TRGSWFFTlvl1,DEF_n>;         // n x ((2*l) x (2 x N)) array<array<array<array<double,DEF_N>,2>,2*DEF_l>,DEF_n>
 
+using KeySwitchingKey = array<array<array<TLWElvl0,(1U >> DEF_basebit)-1>,DEF_t>,DEF_N>; // N x t x 3 x 2 x N
+
 
 struct lweparams{
     // Common
