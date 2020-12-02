@@ -1,0 +1,1 @@
+/usr/bin/c++  -march=native -std=c++17 -O3   CMakeFiles/gate_main.dir/gate_main.cpp.o  -o gate_main ../src/libTFHE.a ../SPQLIOS/libSPQLIOS.a ../RANDEN/libRANDEN.a 

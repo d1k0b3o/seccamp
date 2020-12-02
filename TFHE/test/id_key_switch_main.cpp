@@ -33,8 +33,10 @@ int main(){
     secretkey sk;
 
     // gen key switching key
-    KeySwitchingKey *ksk = new KeySwitchingKey;
-    gen_Key_Switching_Key(*ksk,sk.key.lvl1,sk.key.lvl0);
+    GateKey* gk = new GateKey(sk);
+
+    // KeySwitchingKey *ksk = new KeySwitchingKey;
+    // gen_Key_Switching_Key(*ksk,sk.key.lvl1,sk.key.lvl0);
 
     //cout << "gen ksk ?" << endl;
     
@@ -54,7 +56,7 @@ int main(){
 
         // Id Key Switch   keylvl1 -> keylvl0
         TLWElvl0 res_tlwe0;
-        Id_Key_Switch(res_tlwe0,tlwe1,*ksk);
+        Id_Key_Switch(res_tlwe0,tlwe1,*gk);
 
         //cout << "Id key Switch ?" <<endl;
 

@@ -8,5 +8,6 @@
 #include<../include/mulfft.hpp>
 #include<../include/trgsw.hpp>
 #include<../include/detwfa.hpp>
+#include<../include/cloudkey.hpp>
 #include<../include/gatebootstrapping.hpp>
 #include<../include/keyswitch.hpp>

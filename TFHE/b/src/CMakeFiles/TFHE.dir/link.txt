@@ -1,0 +1,2 @@
+/usr/bin/ar qc libTFHE.a  CMakeFiles/TFHE.dir/cloudkey.cpp.o CMakeFiles/TFHE.dir/detwfa.cpp.o CMakeFiles/TFHE.dir/gatebootstrapping.cpp.o CMakeFiles/TFHE.dir/keyswitch.cpp.o CMakeFiles/TFHE.dir/tlwe.cpp.o CMakeFiles/TFHE.dir/trgsw.cpp.o CMakeFiles/TFHE.dir/trlwe.cpp.o
+/usr/bin/ranlib libTFHE.a

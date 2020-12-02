@@ -54,17 +54,15 @@ int main(){
 
     // gen sk
     secretkey sk;
-
-    //cout << "gen sk ?" << endl;
-
     // gen bootstrapping key (TRGSWlvl1)
-    BootStrappingKeyFFTlvl01 *bk = new BootStrappingKeyFFTlvl01;
+    GateKey* gk = new GateKey(sk);
+    // BootStrappingKeyFFTlvl01 *bk = new BootStrappingKeyFFTlvl01;
 
-    array<int32_t,DEF_n> tmp;
-    for(int i=0;i<DEF_n;i++){
-        tmp[i]=(int)sk.key.lvl0[i];
-    }
-    gen_bootstrapping_key3(*bk,tmp,sk.key.lvl1);
+    // array<int32_t,DEF_n> tmp;
+    // for(int i=0;i<DEF_n;i++){
+    //     tmp[i]=(int)sk.key.lvl0[i];
+    // }
+    // gen_bootstrapping_key3(*bk,tmp,sk.key.lvl1);
    
 
     // for(int i=0;i<DEF_n;i++){
@@ -104,7 +102,7 @@ int main(){
 
     // Blind Rotate
     TRLWElvl1 res_trlwe;
-    Blind_Rotate(res_trlwe,testvector,tlwe,*bk);
+    Blind_Rotate(res_trlwe,testvector,tlwe,*gk);
 
     //cout << "do rotate ?" << endl;
 

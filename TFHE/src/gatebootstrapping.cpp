@@ -35,36 +35,36 @@ namespace myTFHE{
         return res_trlwe;
     }
     
-    // gen bootstrapping_key(lvekey lvl0, lwekey lvl1) return bk;
-    BootStrappingKeyFFTlvl01 gen_bootstrapping_key(lwekeylvl0 &lvl0, lwekeylvl1 &lvl1){
-        cout << "ok ?" << endl;
-        // TRGSW encrypt key.lvl0 bit-by-bit
-        BootStrappingKeyFFTlvl01 bk;
+    // // gen bootstrapping_key(lvekey lvl0, lwekey lvl1) return bk;
+    // BootStrappingKeyFFTlvl01 gen_bootstrapping_key(lwekeylvl0 &lvl0, lwekeylvl1 &lvl1){
+    //     cout << "ok ?" << endl;
+    //     // TRGSW encrypt key.lvl0 bit-by-bit
+    //     BootStrappingKeyFFTlvl01 bk;
 
-        for(int i=0;i<DEF_n;i++){
-            //int32_t Keylvl0 = static_cast<typename make_signed<uint32_t>::type>(sk.key.lvl0[i]);
-            //bk[i] = trgsw_fft_Enc_lvl1(lvl0[i],DEF_abk,lvl1);
-            cout << "ok?" << endl;
-        }
+    //     for(int i=0;i<DEF_n;i++){
+    //         //int32_t Keylvl0 = static_cast<typename make_signed<uint32_t>::type>(sk.key.lvl0[i]);
+    //         //bk[i] = trgsw_fft_Enc_lvl1(lvl0[i],DEF_abk,lvl1);
+    //         cout << "ok?" << endl;
+    //     }
 
-        return bk;
-    }
+    //     return bk;
+    // }
 
 
-    TRGSWFFTlvl1 gen_bootstrapping_key2(uint32_t lvl0, lwekeylvl1 &lvl1){
-        TRGSWFFTlvl1 res_bk;
-        res_bk = trgsw_fft_Enc_lvl1(lvl0,DEF_abk,lvl1);
-        return res_bk;
-    }
+    // TRGSWFFTlvl1 gen_bootstrapping_key2(uint32_t lvl0, lwekeylvl1 &lvl1){
+    //     TRGSWFFTlvl1 res_bk;
+    //     res_bk = trgsw_fft_Enc_lvl1(lvl0,DEF_abk,lvl1);
+    //     return res_bk;
+    // }
 
-    void gen_bootstrapping_key3(BootStrappingKeyFFTlvl01 &res_bk, array<int32_t,DEF_n> &tmp, lwekeylvl1 &lvl1){
-        for(int i=0;i<DEF_n;i++){
-            res_bk[i] = trgsw_fft_Enc_lvl1(tmp[i],DEF_abk,lvl1);
-        }
+    // void gen_bootstrapping_key3(BootStrappingKeyFFTlvl01 &res_bk, array<int32_t,DEF_n> &tmp, lwekeylvl1 &lvl1){
+    //     for(int i=0;i<DEF_n;i++){
+    //         res_bk[i] = trgsw_fft_Enc_lvl1(tmp[i],DEF_abk,lvl1);
+    //     }
         
-    }
+    // }
 
-    void gen_bootstrapping_key4();
+    // void gen_bootstrapping_key4();
 
 
     void Poly_Mul_By_X_i(Polynomiallvl1 &res, const Polynomiallvl1 &rot, const uint32_t til){
@@ -83,7 +83,7 @@ namespace myTFHE{
     }
 
     // Blind_Rotate (TRLWElvl1 *testvector, TLWElvl0 *tlwe, vector<TRGSWFFTlvl1> *bk) return trlwe
-    TRLWElvl1 Blind_Rotate(TRLWElvl1 &res_trlwe,const TRLWElvl1 &testvector, const TLWElvl0 &tlwe, const BootStrappingKeyFFTlvl01 &bk){
+    TRLWElvl1 Blind_Rotate(TRLWElvl1 &res_trlwe,const TRLWElvl1 &testvector, const TLWElvl0 &tlwe, const GateKey &gk){
         
         //b_til  tlwe bの丸め
         uint32_t b_til = 2*DEF_N - (tlwe[DEF_n] +(1 << (31 - DEF_Nbit -1)) >> (32 - DEF_Nbit -1));
@@ -111,7 +111,7 @@ namespace myTFHE{
             Poly_Mul_By_X_i(trlwe1[1],trlwe0[1],a_til);
 
             // CMUX Dec(BK_i) ? trlwe1 : trlwe0
-            CMUX_lvl1(res_trlwe,bk[i],trlwe1,trlwe0);
+            CMUX_lvl1(res_trlwe,gk.bk[i],trlwe1,trlwe0);
 
             trlwe0 = res_trlwe;
         }
