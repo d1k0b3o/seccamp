@@ -29,7 +29,7 @@ constexpr uint32_t DEF_Bg = 1 << DEF_Bgbit;     // Bg=64
 
 // Identity Key Switch security prams
 constexpr uint32_t DEF_basebit = 2;
-constexpr uint32_t DEF_t = 8;
+constexpr uint32_t DEF_tt = 8;
 
 constexpr uint64_t DEF_nbarbit = 11;
 constexpr uint64_t DEF_nbar = 1 << DEF_nbarbit;
@@ -64,7 +64,7 @@ using TRGSWFFTlvl1 = array<TRLWEInFDlvl1,2*DEF_l>;                  // (2*l) x (
 // lwekeylvl0 を 1bit ずつTRGSWに暗号化
 using BootStrappingKeyFFTlvl01 = array<TRGSWFFTlvl1,DEF_n>;         // n x ((2*l) x (2 x N)) array<array<array<array<double,DEF_N>,2>,2*DEF_l>,DEF_n>
 
-using KeySwitchingKey = array<array<array<TLWElvl0,(1U >> DEF_basebit)-1>,DEF_t>,DEF_N>; // N x t x 3 x 2 x N
+using KeySwitchingKey = array<array<array<TLWElvl0,(1U << DEF_basebit)-1>,DEF_tt>,DEF_N>; // N x t x 3 x 2 x N
 
 
 struct lweparams{
@@ -87,7 +87,7 @@ struct lweparams{
 
     // Identity Key Switch security params
     uint32_t basebit = DEF_basebit;
-    uint32_t t = DEF_t;
+    uint32_t t = DEF_tt;
 
 };
 

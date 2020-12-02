@@ -52,9 +52,9 @@ namespace myTFHE{
         return res;
     }
     
-    TLWElvl1 tlwe_Enc_lvl1(const uint32_t m,const double alpha, const lwekeylvl1 &key){
+    TLWElvl1 tlwe_Enc_lvl1(const uint32_t myu,const double alpha, const lwekeylvl1 &key){
         
-        return tlwe_Sym_Enc_lvl1<uint32_t,DEF_N>(m ? DEF_myu : -DEF_myu,alpha,key);
+        return tlwe_Sym_Enc_lvl1<uint32_t,DEF_N>(myu,alpha,key);
     }
 
     // tlwe の暗号化処理呼び出し　

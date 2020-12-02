@@ -16,6 +16,7 @@
 
 #include<array>
 #include<vector>
+#include<iostream>
 #include<cassert>
 #include<../include/params.hpp>
 #include<../include/tfhe++.hpp>
@@ -34,6 +35,8 @@ int main(){
     // gen key switching key
     KeySwitchingKey *ksk = new KeySwitchingKey;
     gen_Key_Switching_Key(*ksk,sk.key.lvl1,sk.key.lvl0);
+
+    //cout << "gen ksk ?" << endl;
     
     const int num_test = 100;
     for(int test=0;test<num_test;test++){
@@ -41,20 +44,30 @@ int main(){
         // gen in_m
         uint8_t in_m = binary(engine);
 
+        // m -> myu
+        uint32_t myu= in_m ? DEF_myu:-DEF_myu;
+
         // tlwe Enc lvl1
         TLWElvl1 tlwe1;
-        tlwe1 = tlwe_Enc_lvl1(in_m,DEF_alpha,sk.key.lvl1);
+        tlwe1 = tlwe_Enc_lvl1(myu,DEF_alpha,sk.key.lvl1);
+        //cout << "tlwelvl1 enc?" <<endl;
 
         // Id Key Switch   keylvl1 -> keylvl0
         TLWElvl0 res_tlwe0;
         Id_Key_Switch(res_tlwe0,tlwe1,*ksk);
 
+        //cout << "Id key Switch ?" <<endl;
+
         // gen out_m
         uint8_t out_m;
         out_m = tlwe_Dec_lvl0(res_tlwe0,sk.key.lvl0);
 
+        //cout << "dec tlwe0?" << endl;
+
         // check in_m == out_m
         assert(in_m == out_m);
     }
+
+    cout << "Identity Key Switch PASS!" << endl;
 
 }
