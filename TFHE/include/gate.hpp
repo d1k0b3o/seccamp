@@ -7,9 +7,11 @@
 
 namespace myTFHE{
 
-    void HomNAND(TLWElvl0 &res_tlwe,TLWElvl0 &tlweA,TLWElvl0 &tlweB,const GateKey &gk);
-    void HomAND(TLWElvl0 &res_tlwe,TLWElvl0 &tlweA,TLWElvl0 &tlweB,const GateKey &gk);
-    void HomOR(TLWElvl0 &res_tlwe,TLWElvl0 &tlweA,TLWElvl0 &tlweB,const GateKey &gk);
-    void HomNOR(TLWElvl0 &res_tlwe,TLWElvl0 &tlweA,TLWElvl0 &tlweB,const GateKey &gk);
+    void HomNAND(TLWElvl0 &res_tlwe,const TLWElvl0 &tlweA,const TLWElvl0 &tlweB,const GateKey &gk);
+    void HomAND(TLWElvl0 &res_tlwe,const TLWElvl0 &tlweA,const TLWElvl0 &tlweB,const GateKey &gk);
+    void HomNOT(TLWElvl0 &res_tlwe,const TLWElvl0 &tlweA,const GateKey &gk);
+    void HomOR(TLWElvl0 &res_tlwe,const TLWElvl0 &tlweA,const TLWElvl0 &tlweB,const GateKey &gk);
+    void HomNOR(TLWElvl0 &res_tlwe,const TLWElvl0 &tlweA,const TLWElvl0 &tlweB,const GateKey &gk);
+    void HomXOR(TLWElvl0 &res_tlwe,const TLWElvl0 &tlweA,const TLWElvl0 &tlweB,const GateKey &gk);
 
 } // myTFHE
