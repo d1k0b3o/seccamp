@@ -22,4 +22,33 @@ namespace myTFHE{
         Id_Key_Switch(res_tlwe,tlwe1,gk);
     }
 
+    void HomAND(TLWElvl0 &res_tlwe,TLWElvl0 &tlweA,TLWElvl0 &tlweB,const GateKey &gk){
+
+        TLWElvl0 tlwe;
+        HomNAND(tlwe,tlweA,tlweB,gk);
+
+        HomNAND(res_tlwe,tlwe,tlwe,gk);
+
+    }
+
+    void HomOR(TLWElvl0 &res_tlwe,TLWElvl0 &tlweA,TLWElvl0 &tlweB,const GateKey &gk){
+        TLWElvl0 tlweAA;
+        HomNAND(tlweAA,tlweA,tlweA,gk);
+
+        TLWElvl0 tlweBB;
+        HomNAND(tlweBB,tlweB,tlweB,gk);
+
+        HomNAND(res_tlwe,tlweAA,tlweBB,gk);
+
+    }
+
+    void HomNOR(TLWElvl0 &res_tlwe,TLWElvl0 &tlweA,TLWElvl0 &tlweB,const GateKey &gk){
+
+        TLWElvl0 tlwe;
+        HomOR(tlwe,tlweA,tlweB,gk);
+        HomNAND(res_tlwe,tlwe,tlwe,gk);
+
+
+    }
+
 } // myTFHE
