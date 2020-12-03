@@ -50,6 +50,7 @@ make
     │   ├── cloudkey.hpp
     │   ├── common.hpp
     │   ├── detwfa.hpp
+    │   ├── gate.hpp
     │   ├── gatebootstrapping.hpp
     │   ├── key.hpp
     │   ├── keyswitch.hpp
@@ -61,7 +62,9 @@ make
     │   └── trlwe.hpp
     ├── src
     │   ├── CMakeLists.txt
+    │   ├── cloudkey.cpp
     │   ├── detwfa.cpp
+    │   ├── gate.cpp
     │   ├── gatebootstrapping.cpp
     │   ├── keyswitch.cpp
     │   ├── tlwe.cpp
@@ -73,6 +76,7 @@ make
         ├── blind_rotate_main.cpp
         ├── cmux_main.cpp
         ├── external_product_main.cpp
+        ├── gate_main.cpp
         ├── id_key_switch_main.cpp
         ├── tlwe_main.cpp
         └── trlwe_main.cpp
