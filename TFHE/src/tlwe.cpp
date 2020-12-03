@@ -35,6 +35,27 @@ namespace myTFHE{
         return tlwe_Sym_Enc<uint32_t,DEF_n>(m,alpha,key);
     }
 
+    TLWElvl0 TLWE_ENC(const uint8_t &m,const secretkey &sk){
+        TLWElvl0 res;
+
+        res = tlwe_Enc_lvl0(m? DEF_myu:-DEF_myu,DEF_alpha,sk.key.lvl0);
+
+        return res;
+    }
+
+    // tlwe の暗号化処理呼び出し　
+    vector<TLWElvl0> tlwe_Enc(const vector<uint8_t> &m,const secretkey &sk){
+        vector<TLWElvl0> c(m.size());
+        // 暗号化処理を呼び出し、cに代入していく
+        for(int i=0;i<m.size();++i){
+            c[i]= tlwe_Enc_lvl0(m[i]? DEF_myu : -DEF_myu,DEF_alpha,sk.key.lvl0);
+        }
+
+        // 暗号文を返す
+        return c;
+
+    }
+
     // Id_Key_Switch
     template <typename T=uint32_t,uint32_t N=DEF_N>
     inline array<T,N+1> tlwe_Sym_Enc_lvl1(const T myu, const double alpha, const array<uint32_t,N> &key){
@@ -57,18 +78,7 @@ namespace myTFHE{
         return tlwe_Sym_Enc_lvl1<uint32_t,DEF_N>(myu,alpha,key);
     }
 
-    // tlwe の暗号化処理呼び出し　
-    vector<TLWElvl0> tlwe_Enc(const vector<uint8_t> &m,const secretkey &sk){
-        vector<TLWElvl0> c(m.size());
-        // 暗号化処理を呼び出し、cに代入していく
-        for(int i=0;i<m.size();++i){
-            c[i]= tlwe_Enc_lvl0(m[i]? DEF_myu : -DEF_myu,DEF_alpha,sk.key.lvl0);
-        }
-
-        // 暗号文を返す
-        return c;
-
-    }
+    
 
     // 実際の復号処理
     template <typename T=uint32_t,uint32_t n=DEF_n>

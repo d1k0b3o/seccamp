@@ -11,3 +11,4 @@
 #include<../include/cloudkey.hpp>
 #include<../include/gatebootstrapping.hpp>
 #include<../include/keyswitch.hpp>
+#include<../include/gate.hpp>

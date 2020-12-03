@@ -20,5 +20,5 @@ namespace myTFHE{
 
     void Poly_Mul_By_X_i(Polynomiallvl1 &res, const Polynomiallvl1 &rot, const uint32_t til);
     TRLWElvl1 Blind_Rotate(TRLWElvl1 &res_trlwe,const TRLWElvl1 &testvector, const TLWElvl0 &tlwe, const GateKey &gk);
-
+    void gatebootstrapping_tlwe_to_tlwe(TLWElvl1 &res_tlwe,const TLWElvl0 &tlwe0,const GateKey &gk);
 } // myTFHE

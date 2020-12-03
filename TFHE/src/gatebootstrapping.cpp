@@ -117,4 +117,18 @@ namespace myTFHE{
         }
         return res_trlwe;
     }
+
+    void gatebootstrapping_tlwe_to_tlwe(TLWElvl1 &res_tlwe,const TLWElvl0 &tlwe0,const GateKey &gk){
+
+        // gen testvector
+        TRLWElvl1 testvector = gen_testvector();
+
+        // Blind Rotate
+        TRLWElvl1 res_trlwe;
+        Blind_Rotate(res_trlwe,testvector,tlwe0,gk);
+
+        // Sample Extract Index
+        Sample_Extract_Index_lvl1(res_tlwe,res_trlwe,0);
+
+    }
 }
