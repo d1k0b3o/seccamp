@@ -13,5 +13,6 @@ namespace myTFHE{
     void HomOR(TLWElvl0 &res_tlwe,const TLWElvl0 &tlweA,const TLWElvl0 &tlweB,const GateKey &gk);
     void HomNOR(TLWElvl0 &res_tlwe,const TLWElvl0 &tlweA,const TLWElvl0 &tlweB,const GateKey &gk);
     void HomXOR(TLWElvl0 &res_tlwe,const TLWElvl0 &tlweA,const TLWElvl0 &tlweB,const GateKey &gk);
+    void HomXNOR(TLWElvl0 &res_tlwe,const TLWElvl0 &tlweA,const TLWElvl0 &tlweB,const GateKey &gk);
 
 } // myTFHE

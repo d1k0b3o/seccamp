@@ -44,10 +44,10 @@ int main(){
     // time
     double time_homo=0.0;
     // test
-    const uint32_t num_test = 100;
+    const uint32_t num_test =1000;
 
 
-/************************************************************************************************
+/************************************************************************************************/
 
     // test HomNAND
     cout << "test HomNAND" << endl;
@@ -88,7 +88,7 @@ int main(){
     cout << "HomNAND PASS!" << endl;
     cout << "time = " << time_homo/num_test << " micro sec" << endl << endl;
 
-/************************************************************************************************
+/************************************************************************************************/
 
     // test HomAND
     cout << "test HomAND" << endl;
@@ -131,7 +131,7 @@ int main(){
     cout << "HomAND PASS!" << endl;
     cout << "time = " << time_homo/num_test << " micro sec" << endl << endl;
 
-/************************************************************************************************
+/************************************************************************************************/
     // test HomNOT
     cout << "test HomNOT" << endl;
     time_homo = 0.0;
@@ -171,7 +171,7 @@ int main(){
     cout << "HomNOT PASS!" << endl;
     cout << "time = " << time_homo/num_test << " micro sec" << endl << endl;
 
-/************************************************************************************************
+/************************************************************************************************/
 
     // test HomOR
     cout << "test HomOR" << endl;
@@ -214,7 +214,7 @@ int main(){
     cout << "HomOR PASS!" << endl;
     cout << "time = " << time_homo/num_test << " micro sec" << endl << endl;
 
-/************************************************************************************************
+/************************************************************************************************/
     // test HomNOR
     cout << "test HomNOR" << endl;
     time_homo = 0.0;
@@ -276,9 +276,9 @@ int main(){
         chrono::system_clock::time_point start,end;
         start = chrono::system_clock::now();
 
-        // HomXOR  res_tlwe = (tlweA  tlweB)
+        // HomXOR  res_tlwe = (tlweA ^ tlweB)
         TLWElvl0 res_tlwe;
-        HomNOR(res_tlwe,tlweA,tlweB,*gk);
+        HomXOR(res_tlwe,tlweA,tlweB,*gk);
 
         end = chrono::system_clock::now();
 
@@ -287,16 +287,16 @@ int main(){
         res = tlwe_Dec_lvl0(res_tlwe,sk.key.lvl0);
 
         uint8_t C,D,E,F;
-        C=!(A&B);
-        D=!(A&C);
-        E=!(B&C);
-        F=!(D&E);
+        // C=!(A&B);
+        // D=!(A&C);
+        // E=!(B&C);
+        // F=!(D&E);
 
         // check
-        cout << "A = " << (A>0) << "B =" << (B>0) << endl;
-        cout << "A^B = " << (F>0) << endl;
-        cout << "res = " << (res > 0) << endl; 
-        //assert((A^B) == res);
+        // cout << "A = " << (A>0) << "B =" << (B>0) << endl;
+        // cout << "A^B = " << (A^B) << endl;
+        // cout << "res = " << (res > 0) << endl; 
+        assert((A^B) == res);
 
         //
         double elapsed = chrono::duration_cast<chrono::microseconds>(end-start).count();
@@ -305,6 +305,47 @@ int main(){
     }
     
     cout << "HomXOR PASS!" << endl;
+    cout << "time = " << time_homo/num_test << " micro sec" << endl << endl;
+
+/************************************************************************************************/
+   // test HomXNOR
+    cout << "test HomXNOR" << endl;
+    time_homo = 0.0;
+    
+    for(int test=0;test<num_test;test++){
+
+        // gen input A,B
+        uint8_t A,B;
+        A=binary(engine);
+        B=binary(engine);
+
+        // Enc A,B
+        TLWElvl0 tlweA,tlweB;
+        tlweA = TLWE_ENC(A,sk);
+        tlweB = TLWE_ENC(B,sk);
+
+        chrono::system_clock::time_point start,end;
+        start = chrono::system_clock::now();
+
+        // HomXNOR  res_tlwe = !(tlweA ^ tlweB)
+        TLWElvl0 res_tlwe;
+        HomXNOR(res_tlwe,tlweA,tlweB,*gk);
+
+        end = chrono::system_clock::now();
+
+        // Dec res_tlwe
+        uint8_t res;
+        res = tlwe_Dec_lvl0(res_tlwe,sk.key.lvl0);
+
+        // check
+        assert((!(A^B)) == res);
+
+        double elapsed = chrono::duration_cast<chrono::microseconds>(end-start).count();
+        time_homo += elapsed;
+
+    }
+    
+    cout << "HomXNOR PASS!" << endl;
     cout << "time = " << time_homo/num_test << " micro sec" << endl << endl;
 
 /************************************************************************************************/

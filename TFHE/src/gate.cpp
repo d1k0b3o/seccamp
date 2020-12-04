@@ -10,9 +10,11 @@ namespace myTFHE{
 
         TLWElvl0 tlwe;
         for(int i=0;i<=DEF_n;i++){
-            tlwe[i] = -tlweA[i] -tlweB[i];
+            //tlwe[i] = -tlweA[i] -tlweB[i];
+            tlwe[i] = tlweA[i] + tlweB[i];
         }
-        tlwe[DEF_n] += 1U << 29; //- tlweA[DEF_n] -tlweB[DEF_n];
+        //tlwe[DEF_n] += DEF_myu;
+        tlwe[DEF_n] += 3*DEF_myu;  
 
         // gatebootstrapping
         TLWElvl1 tlwe1;
@@ -99,6 +101,8 @@ namespace myTFHE{
 
     void HomXOR(TLWElvl0 &res_tlwe,const TLWElvl0 &tlweA,const TLWElvl0 &tlweB,const GateKey &gk){
 
+
+        // 等価回路で
         // TLWElvl0 NA;
         // HomNOT(NA,tlweA,gk);
 
@@ -124,11 +128,54 @@ namespace myTFHE{
 
         // HomAND(res_tlwe,NAB,AandB,gk);
 
+        // 等価回路(NAND)で
+        // TLWElvl0 AB;
+        // HomNAND(AB,tlweA,tlweB,gk);
+
+        // TLWElvl0 AAB;
+        // HomNAND(AAB,AB,tlweA,gk);
+
+        // TLWElvl0 BAB;
+        // HomNAND(BAB,AB,tlweB,gk);
+
+        // HomNAND(res_tlwe,AAB,BAB,gk);
+
+        // Visual Image
+        // TLWElvl0 tlwe;
+        // for(int i=0;i<=DEF_n;i++){
+        //     tlwe[i]=2*(tlweA[i]+tlweB[i]);
+        // }
+        // tlwe[DEF_n] += DEF_myu;
+
+        // TLWElvl1 tlwe1;
+        // gatebootstrapping_tlwe_to_tlwe(tlwe1,tlwe,gk);
+
+        // Id_Key_Switch(res_tlwe,tlwe1,gk);
+
+        // Visual Image alt
         TLWElvl0 tlwe;
         for(int i=0;i<=DEF_n;i++){
-            tlwe[i]=2*(tlweA[i]+tlweB[i]);
+            tlwe[i]= 2*tlweA[i] + tlweB[i];
         }
-        tlwe[DEF_n] += DEF_myu;
+        tlwe[DEF_n] += 2*(1U << 29);
+
+        TLWElvl1 tlwe1;
+        gatebootstrapping_tlwe_to_tlwe(tlwe1,tlwe,gk);
+
+        Id_Key_Switch(res_tlwe,tlwe1,gk);
+
+
+    }
+
+    void HomXNOR(TLWElvl0 &res_tlwe,const TLWElvl0 &tlweA,const TLWElvl0 &tlweB,const GateKey &gk){
+
+        TLWElvl0 tlwe;
+        for(int i=0;i<=DEF_n;i++){
+            //tlwe[i] = 2*tlweA[i] + tlweB[i];
+            tlwe[i] = 2*(tlweA[i]+tlweB[i]);
+        }
+        //tlwe[DEF_n] -= 2*(1U << 29);
+        tlwe[DEF_n] -= (1U << 29);
 
         TLWElvl1 tlwe1;
         gatebootstrapping_tlwe_to_tlwe(tlwe1,tlwe,gk);
