@@ -6,7 +6,9 @@ TFHE (Fast Fully Homomorphic Encryption on Torus)
 
 ## Reference
 
-[here](https://nindanaoto.github.io/)
+[松岡講師の偉大なる資料](https://nindanaoto.github.io/)
+[TFHE](https://tfhe.github.io/tfhe/)
+[TFHE 原論文](https://eprint.iacr.org/2018/421.pdf)
 
 ## Implement test
 ```
