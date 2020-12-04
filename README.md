@@ -1,7 +1,7 @@
 # seccamp
 Work on seccamp!!
 
-TFHE (Fast Fully Homomorphic Encryption on Torus)
+TFHE (Toru Fully Homomorphic Encryption)
 
 
 ## Reference
